@@ -8,7 +8,7 @@
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack --mode=production --node-env=production",
     "watch": "webpack --watch",
-    "serve": "webpack serve --open"
+    "serve": "webpack serve"
   },
   "keywords": [],
   "author": "SB Park",
@@ -22,6 +22,7 @@
     "css-loader": "^6.10.0",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
+    "html-loader": "^5.0.0",
     "html-webpack-plugin": "^5.6.0",
     "mini-css-extract-plugin": "^2.8.1",
     "postcss": "^8.4.35",
@@ -34,5 +35,8 @@
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.2",
     "workbox-webpack-plugin": "^7.0.0"
+  },
+  "dependencies": {
+    "reset-css": "^5.0.2"
   }
 }

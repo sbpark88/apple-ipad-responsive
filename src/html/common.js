@@ -1,3 +1,6 @@
+import "reset-css";
+import "../css/common.scss";
+
 export const setWorkbox = () => {
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
