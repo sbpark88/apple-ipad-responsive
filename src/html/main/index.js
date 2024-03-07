@@ -1,3 +1,4 @@
-import { setWorkbox } from "../common";
+import Common from "../Common";
+import "../../js/components/header/index";
 
-// setWorkbox();
+new Common();
