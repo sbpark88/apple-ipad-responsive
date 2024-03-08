@@ -5,7 +5,6 @@ header .inner .search-wrap {
   top: 0;
   left: 0;
   width: 100%;
-  display: none;
 
   .search {
     max-width: 600px;
@@ -90,15 +89,5 @@ header .inner .search-wrap {
         color: #0071e3;
       }
     }
-  }
-}
-
-header.searching {
-  .search-wrap {
-    display: block;
-  }
-
-  .inner ul.menu > li {
-    display: none;
   }
 }

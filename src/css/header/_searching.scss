@@ -1,0 +1,98 @@
+$header-li-length: 12;
+$search-bar-transition-time: 0.4s;
+$autocompletes-li-length: 6;
+
+// 검색창이 사라질 때(=header 태그에 searching 클래스가 제거될 때) 적용될 스타일.
+header {
+  .inner ul.menu {
+    > li {
+      transition: $search-bar-transition-time;
+    }
+
+    @for $i from 1 through $header-li-length {
+      > li:nth-child(#{$i}) {
+        // 첫번째 엘리먼트: 지연 없음, 마지막 엘리먼트로 가면서 지연시간이 증가. 지연시간의 최대는 $transition-time 을 넘지 않도록 갯수로 나눔.
+        transition-delay: calc(
+          #{$i} * ($search-bar-transition-time / #{$header-li-length})
+        );
+      }
+    }
+  }
+
+  .search-wrap {
+    visibility: hidden;
+    opacity: 0;
+    transition: $search-bar-transition-time;
+
+    .search {
+      input,
+      .search-icon,
+      .autocompletes h3,
+      .autocompletes li {
+        transition: 0.6s;
+        transition-delay: calc(#{$search-bar-transition-time} / 2) s;
+        transform: translateX(100px);
+      }
+
+      .autocompletes {
+        @for $i from 1 through $autocompletes-li-length {
+          li:nth-child(#{$i}) {
+            transition-delay: calc(
+              #{$autocompletes-li-length -
+                $i} *
+                ($search-bar-transition-time / #{$autocompletes-li-length})
+            );
+          }
+        }
+      }
+    }
+  }
+}
+
+// 검색창이 열릴 때(=header 태그에 searching 클래스가 추가될 때) 적용될 스타일.
+header.searching {
+  .inner ul.menu {
+    > li {
+      transform: scale(0.7);
+      opacity: 0;
+    }
+
+    @for $i from 1 through $header-li-length {
+      > li:nth-child(#{$i}) {
+        // 마지막 엘리먼트: 지연 없음, 첫 번째 엘리먼트로 가면서 지연시간이 증가. 지연시간의 최대는 $transition-time 을 넘지 않도록 갯수로 나눔.
+        transition-delay: calc(
+          #{$header-li-length -
+            $i} *
+            ($search-bar-transition-time / #{$header-li-length})
+        );
+      }
+    }
+  }
+
+  .search-wrap {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: calc(#{$search-bar-transition-time} / 2) s;
+
+    .search {
+      input,
+      .search-icon,
+      .autocompletes h3,
+      .autocompletes li {
+        transition-delay: calc(#{$search-bar-transition-time} / 2) s;
+        transform: translateX(0);
+      }
+
+      .autocompletes {
+        @for $i from 1 through $autocompletes-li-length {
+          li:nth-child(#{$i}) {
+            transition-delay: calc(
+              #{$i} *
+                ($search-bar-transition-time / #{$autocompletes-li-length})
+            );
+          }
+        }
+      }
+    }
+  }
+}
