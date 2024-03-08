@@ -1,52 +1,10 @@
+@import "menu";
+
 header {
   background-color: #3a3a3a;
 
   .inner {
     max-width: 1020px;
     margin: 0 auto;
-
-    ul.menu {
-      display: flex;
-      height: 44px;
-      justify-content: space-between;
-
-      li {
-        display: flex;
-
-        a {
-          padding: 0 10px;
-          font-size: 11px;
-          display: flex;
-          align-items: center;
-          color: #f5f5f5;
-          opacity: 0.8;
-
-          &:hover {
-            opacity: 1;
-          }
-        }
-
-        &.apple-logo a,
-        &.search-starter a,
-        &.basket-starter a {
-          width: 14px;
-          text-indent: -9999px;
-          background-repeat: no-repeat;
-          background-position: center 13px;
-        }
-
-        &.apple-logo a {
-          background-image: url("../../assets/images/header_apple.svg");
-        }
-
-        &.search-starter a {
-          background-image: url("../../assets/images/header_search.svg");
-        }
-
-        &.basket-starter a {
-          background-image: url("../../assets/images/header_bag.svg");
-        }
-      }
-    }
   }
 }

@@ -1,0 +1,123 @@
+header .inner ul.menu {
+  display: flex;
+  height: 44px;
+  justify-content: space-between;
+
+  > li {
+    display: flex;
+
+    > a {
+      padding: 0 10px;
+      font-size: 11px;
+      display: flex;
+      align-items: center;
+      color: #f5f5f5;
+      opacity: 0.8;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    &.apple-logo > a,
+    &.search-starter > a,
+    &.basket-starter > a {
+      width: 14px;
+      text-indent: -9999px;
+      background-repeat: no-repeat;
+      background-position: center 13px;
+    }
+
+    &.apple-logo > a {
+      background-image: url("../../assets/images/header_apple.svg");
+    }
+
+    &.search-starter > a {
+      background-image: url("../../assets/images/header_search.svg");
+    }
+
+    &.basket-starter {
+      position: relative;
+
+      > a {
+        background-image: url("../../assets/images/header_bag.svg");
+      }
+    }
+  }
+
+  /* basket in basket-starter */
+  .basket {
+    $border: 1px solid #d2d2d2;
+    $background-color: #fff;
+    $text-size: 13px;
+
+    width: 290px;
+    padding: 10px 20px;
+    border: $border;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: $background-color;
+    position: absolute;
+    top: calc(100% + 4px);
+    right: -6px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.4s;
+
+    &.show {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .arrow {
+      $size: 20px;
+
+      width: $size; // 20px;
+      height: 10px;
+      position: absolute;
+      top: calc($size / -2); // -10px;
+      right: 12px;
+      overflow: hidden;
+
+      &::before {
+        $size: 12px;
+        content: "";
+        width: $size;
+        height: $size;
+        border: $border;
+        background-color: $background-color;
+        transform: rotate(45deg);
+        transform-origin: 0 0;
+        position: absolute;
+        top: 0;
+        left: 50%;
+      }
+    }
+
+    .message {
+      padding: 30px 0;
+      font-size: $text-size;
+      color: #6e6e6e;
+      text-align: center;
+    }
+
+    ul {
+      margin-top: 10px;
+
+      li {
+        border-top: $border;
+
+        a {
+          display: block;
+          padding: 14px;
+          font-size: $text-size;
+          color: #0071e3;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
