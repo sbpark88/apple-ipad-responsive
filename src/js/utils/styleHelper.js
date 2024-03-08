@@ -32,3 +32,15 @@ export const toggleClassName = ({ $el, className }) => {
     removeClassName({ $el, className }),
   ];
 };
+
+/**
+ * Prevent document scroll
+ */
+export const preventScroll = () =>
+  document.documentElement.classList.add("fixed");
+
+/**
+ * Allow document scroll
+ */
+export const allowScroll = () =>
+  document.documentElement.classList.remove("fixed");

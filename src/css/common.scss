@@ -1,11 +1,22 @@
+$default-text-color: #1d1d1e;
+
+html.fixed {
+  position: fixed;
+  width: 100%;
+  overflow-y: hidden;
+}
+
 body {
   font:
     400 normal 16px/1 "Roboto",
     "Noto Sans KR",
     sans-serif;
   word-break: keep-all;
+  color: $default-text-color;
+  height: 10000px;
 }
 
 a {
+  color: $default-text-color;
   text-decoration: none;
 }

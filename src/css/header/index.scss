@@ -1,4 +1,5 @@
 @import "menu";
+@import "searchWrap";
 
 header {
   background-color: #3a3a3a;
@@ -6,5 +7,6 @@ header {
   .inner {
     max-width: 1020px;
     margin: 0 auto;
+    position: relative;
   }
 }

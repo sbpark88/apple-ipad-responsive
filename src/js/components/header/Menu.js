@@ -10,7 +10,7 @@ const container = $("header .menu");
 render(container)(template);
 
 const basketStarterEl = $("header .basket-starter");
-const basketEl = $("header .basket");
+const basketEl = $("header .menu .basket");
 
 const [showBasket, hideBasket] = toggleClassName({
   $el: basketEl,
