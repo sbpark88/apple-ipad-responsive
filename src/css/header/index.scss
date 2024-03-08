@@ -25,6 +25,27 @@ header {
             opacity: 1;
           }
         }
+
+        &.apple-logo a,
+        &.search-starter a,
+        &.basket-starter a {
+          width: 14px;
+          text-indent: -9999px;
+          background-repeat: no-repeat;
+          background-position: center 13px;
+        }
+
+        &.apple-logo a {
+          background-image: url("../../assets/images/header_apple.svg");
+        }
+
+        &.search-starter a {
+          background-image: url("../../assets/images/header_search.svg");
+        }
+
+        &.basket-starter a {
+          background-image: url("../../assets/images/header_bag.svg");
+        }
       }
     }
   }
