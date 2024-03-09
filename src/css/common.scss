@@ -1,4 +1,4 @@
-$default-text-color: #1d1d1e;
+$default-text-color: #1d1d1d;
 
 html.fixed {
   position: fixed;
@@ -23,4 +23,28 @@ a {
 
 .disabled {
   pointer-events: none !important;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 24px;
+  padding: 0 10px;
+  border: none;
+  border-radius: 100px;
+  outline: none;
+  font-size: 11px;
+  line-height: 1;
+  color: #fff;
+  background-color: #0071e3;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:focus {
+    //outline: 4px solid #81b9f1; // 아래 box-shadow 와 시각적으로 동일하다.
+    box-shadow: 0 0 0 4px #81b9f1;
+  }
 }
