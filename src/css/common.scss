@@ -20,3 +20,7 @@ a {
   color: $default-text-color;
   text-decoration: none;
 }
+
+.disabled {
+  pointer-events: none !important;
+}

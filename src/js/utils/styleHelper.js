@@ -1,3 +1,5 @@
+// @ts-check
+
 /**
  * Add class name to the element.
  * @param $el {Window | Element}
@@ -44,3 +46,17 @@ export const preventScroll = () =>
  */
 export const allowScroll = () =>
   document.documentElement.classList.remove("fixed");
+
+/**
+ * Prevent element click or touch
+ * @param $el {Window | Element}
+ */
+export const preventClick = ($el) =>
+  addClassName({ $el: $el, className: "disabled" })();
+
+/**
+ * Allow element click or touch
+ * @param $el {Window | Element}
+ */
+export const allowClick = ($el) =>
+  removeClassName({ $el, className: "disabled" })();

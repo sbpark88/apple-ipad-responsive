@@ -29,8 +29,7 @@ header {
       .search-icon,
       .autocompletes h3,
       .autocompletes li {
-        transition: 0.6s;
-        transition-delay: calc(#{$search-bar-transition-time} / 2) s;
+        transition: $search-bar-transition-time;
         transform: translateX(100px);
       }
 
@@ -72,14 +71,15 @@ header.searching {
   .search-wrap {
     visibility: visible;
     opacity: 1;
-    transition-delay: calc(#{$search-bar-transition-time} / 2) s;
+    /* 이미 시간초이기 때문에 calc 결과에 s 를 붙이지 않는다 */
+    transition-delay: calc(#{$search-bar-transition-time} / 2);
 
     .search {
       input,
       .search-icon,
       .autocompletes h3,
       .autocompletes li {
-        transition-delay: calc(#{$search-bar-transition-time} / 2) s;
+        transition-delay: calc(#{$search-bar-transition-time} / 2);
         transform: translateX(0);
       }
 

@@ -37,6 +37,7 @@ const render =
 /**
  * Render page with components
  * @param template
+ * @param el
  * @returns {Function}
  */
 const init =

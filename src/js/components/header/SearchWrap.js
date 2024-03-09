@@ -4,7 +4,9 @@ import { $, render } from "../../utils/render";
 import template from "./SearchWrap.html";
 import { eventBind } from "../../utils/eventBinding";
 import {
+  allowClick,
   allowScroll,
+  preventClick,
   preventScroll,
   toggleClassName,
 } from "../../utils/styleHelper";
@@ -15,25 +17,32 @@ render(container)(template);
 
 const searchStarterEl = $("header .search-starter"); // in Menu component
 
-const html = $("html");
 const headerEl = $("header");
-const searchWrapEl = container;
 const searchCloserEl = $("header .search .search-closer");
 const searchShadowEl = $("header .search .shadow");
+const searchInputEl = $("header .search input");
 
 const [addSearch, removeSearch] = toggleClassName({
   $el: headerEl,
   className: "searching",
 });
 
+const clearSearch = () => {
+  searchInputEl.value = "";
+  setTimeout(() => searchInputEl.focus(), 500);
+};
+
 const showSearch = () => {
   addSearch();
   preventScroll();
+  clearSearch();
+  preventClick(searchStarterEl);
 };
 
 const hideSearch = () => {
   removeSearch();
   allowScroll();
+  setTimeout(() => allowClick(searchStarterEl), 400);
 };
 
 const clickSearchStarterEl = (event) => {
