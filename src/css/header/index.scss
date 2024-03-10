@@ -1,9 +1,11 @@
+@import "../constant";
+
 @import "menu";
 @import "searchWrap";
 @import "searching";
 
 header {
-  background-color: #3a3a3a;
+  background-color: $color-header;
   position: relative;
   z-index: 9;
 

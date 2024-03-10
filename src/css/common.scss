@@ -1,4 +1,4 @@
-$default-text-color: #1d1d1d;
+@import "constant";
 
 html.fixed {
   position: fixed;
@@ -12,7 +12,7 @@ body {
     "Noto Sans KR",
     sans-serif;
   word-break: keep-all;
-  color: $default-text-color;
+  color: $color-font;
   height: 10000px;
 }
 
@@ -23,12 +23,16 @@ body {
   position: relative;
 }
 
+img,
 a {
-  display: block;
   user-select: none;
   -webkit-user-select: none;
   -webkit-user-drag: none;
-  color: $default-text-color;
+}
+
+a {
+  display: block;
+  color: $color-font;
   text-decoration: none;
 }
 
@@ -51,16 +55,16 @@ p {
   outline: none;
   font-size: 11px;
   line-height: 1;
-  color: #fff;
-  background-color: #0071e3;
+  color: $color-white;
+  background-color: $color-link;
 
   &:hover {
     opacity: 0.7;
   }
 
   &:focus {
-    //outline: 4px solid #81b9f1; // 아래 box-shadow 와 시각적으로 동일하다.
-    box-shadow: 0 0 0 4px #81b9f1;
+    //outline: 4px solid $color-link-focus; // 아래 box-shadow 와 시각적으로 동일하다.
+    box-shadow: 0 0 0 4px $color-link-focus;
   }
 }
 
@@ -80,7 +84,7 @@ p {
 }
 
 a.link {
-  color: #0071e3;
+  color: $color-link;
   font-size: 19px;
   line-height: 1.3;
 
