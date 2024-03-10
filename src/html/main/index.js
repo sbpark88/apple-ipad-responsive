@@ -1,5 +1,5 @@
 import Common from "../Common";
-import "../../js/components/header/index";
-import "../../js/components/nav/index";
+
+import "../../js/pages/main/index";
 
 new Common();
