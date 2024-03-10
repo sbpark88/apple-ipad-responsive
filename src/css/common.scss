@@ -16,9 +16,24 @@ body {
   height: 10000px;
 }
 
+.inner {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+
 a {
+  display: block;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
   color: $default-text-color;
   text-decoration: none;
+}
+
+p {
+  line-height: 1.6;
 }
 
 .disabled {
@@ -46,5 +61,52 @@ a {
   &:focus {
     //outline: 4px solid #81b9f1; // 아래 box-shadow 와 시각적으로 동일하다.
     box-shadow: 0 0 0 4px #81b9f1;
+  }
+}
+
+.bg-text {
+  display: block;
+  text-indent: -9999px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* Links */
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+a.link {
+  color: #0071e3;
+  font-size: 19px;
+  line-height: 1.3;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &::after {
+    content: " >";
+  }
+}
+
+/* Figures */
+.figures {
+  position: relative;
+
+  figure,
+  figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    * {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
   }
 }
