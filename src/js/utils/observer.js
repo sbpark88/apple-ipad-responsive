@@ -1,9 +1,10 @@
 // @ts-check
 
-const createObserver = (callback, options = { threshold: 0.2 }) =>
-  new IntersectionObserver(callback, {
-    threshold: 0.2,
-  });
+/* Intersection Observer */
+import { debounce } from "./performance";
+
+const createIObserver = (callback, options = { threshold: 0.2 }) =>
+  new IntersectionObserver(callback, options);
 
 const twoWayCallback = (entries) =>
   entries.forEach((entry) =>
@@ -32,8 +33,33 @@ const upwardCallback = (entries) =>
     }
   });
 
-const observer = createObserver(twoWayCallback);
-const observerDownward = createObserver(downwardCallback);
-const observerUpward = createObserver(upwardCallback);
+const observer = createIObserver(twoWayCallback);
+const observerDownward = createIObserver(downwardCallback);
+const observerUpward = createIObserver(upwardCallback);
 
-export { observer, observerDownward, observerUpward };
+/* Mutation Observer */
+const createMObserver = (callback) => new MutationObserver(callback);
+
+const observerMutations = (callback) => {
+  const debouncedCallback = debounce(callback);
+
+  return createMObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      debouncedCallback(mutation);
+    });
+  });
+};
+
+const mutationConfig = {
+  attributes: false,
+  childList: true,
+  subtree: true,
+};
+
+export {
+  observer,
+  observerDownward,
+  observerUpward,
+  observerMutations,
+  mutationConfig,
+};

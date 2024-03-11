@@ -41,7 +41,7 @@ export const Infos = (infos, position) => `
  * @constructor
  */
 const Info = ({ icon, paragraph }) => `
-<div class="info">
+<div class="info observe">
   <div class="icon icon--${icon}"></div>
   <p>${paragraph}</p>
 </div>

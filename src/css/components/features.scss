@@ -41,6 +41,14 @@
   .info {
     max-width: 330px;
     margin-bottom: 24px;
+    opacity: 0;
+    transition: 1s;
+    transform: translateY(100px);
+
+    &.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     p {
       font-size: 21.5px;
