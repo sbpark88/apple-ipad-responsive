@@ -22,7 +22,8 @@ const arrayCheck = (something) => something instanceof Array;
  * @param html {string | string[]} - HTML string
  * @returns {string} - Normalized HTML string
  */
-const normalizeHTML = (html) => (arrayCheck(html) ? html.join("") : html);
+export const normalizeHTML = (html) =>
+  arrayCheck(html) ? html.join("") : html;
 
 /**
  * Render template inside the child of the target element.

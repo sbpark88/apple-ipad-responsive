@@ -1,6 +1,6 @@
 @import "../../constant";
 
-.hero {
+section.hero {
   background-color: $color-section;
 
   .inner {
@@ -8,7 +8,7 @@
   }
 }
 
-.hero {
+section.hero {
   h1 {
     width: 221px;
     height: 91px;
@@ -51,7 +51,7 @@
   }
 }
 
-.hero {
+section.hero {
   h2 {
     width: 735px;
     height: 145px;
