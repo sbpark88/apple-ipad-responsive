@@ -1,0 +1,134 @@
+@use "sass:math";
+
+/* Feature */
+.feature {
+  display: flex;
+}
+
+/* Figures */
+.figures {
+  flex-grow: 1;
+  position: relative;
+
+  figure,
+  figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    * {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+/* Infos */
+.infos {
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+
+  &.infos--center {
+    justify-content: center;
+  }
+
+  &.infos--end {
+    justify-content: flex-end;
+  }
+
+  .info {
+    max-width: 330px;
+    margin-bottom: 24px;
+
+    p {
+      font-size: 21.5px;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+  }
+}
+
+/* Icon */
+.infos .info .icon {
+  $icon-width: 100px;
+  $icon-height: 100px;
+
+  width: $icon-width;
+  height: $icon-height;
+  margin: 0 0 -15px -30px;
+  animation: sprite-icon 3s infinite steps(1);
+
+  &.icon--chip {
+    background-image: url("../../assets/images/sprite_chip.png");
+  }
+  &.icon--faster {
+    background-image: url("../../assets/images/sprite_faster.png");
+  }
+  &.icon--neural {
+    background-image: url("../../assets/images/sprite_neural.png");
+  }
+  &.icon--apps {
+    background-image: url("../../assets/images/sprite_apps.png");
+  }
+  &.icon--battery {
+    background-image: url("../../assets/images/sprite_battery.png");
+  }
+  &.icon--display {
+    background-image: url("../../assets/images/sprite_display.png");
+  }
+  &.icon--true-tone {
+    background-image: url("../../assets/images/sprite_true_tone.png");
+  }
+  &.icon--center-stage {
+    background-image: url("../../assets/images/sprite_center_stage.png");
+  }
+  &.icon--front-camera {
+    background-image: url("../../assets/images/sprite_front_camera.png");
+  }
+  &.icon--back-camera {
+    background-image: url("../../assets/images/sprite_back_camera.png");
+  }
+  &.icon--scan {
+    background-image: url("../../assets/images/sprite_scan.png");
+  }
+  &.icon--download {
+    background-image: url("../../assets/images/sprite_download.png");
+  }
+  &.icon--wifi {
+    background-image: url("../../assets/images/sprite_wifi.png");
+  }
+  &.icon--lte {
+    background-image: url("../../assets/images/sprite_lte.png");
+  }
+  &.icon--pencil {
+    background-image: url("../../assets/images/sprite_pencil.png");
+  }
+  &.icon--keyboard {
+    background-image: url("../../assets/images/sprite_keyboard.png");
+  }
+  &.icon--notes {
+    background-image: url("../../assets/images/sprite_notes.png");
+  }
+  &.icon--covers {
+    background-image: url("../../assets/images/sprite_covers.png");
+  }
+
+  @keyframes sprite-icon {
+    $column: 6;
+    $row: 10;
+    $image-count: $column * $row;
+    $step: math.div(100, ($image-count - 1));
+
+    @for $i from 0 to $image-count {
+      $percentage: math.div(math.round($step * $i * 100), 100);
+      $x: ($i % $column) * -$icon-width;
+      $y: math.floor(math.div($i, $column)) * -$icon-height;
+
+      #{$percentage}% {
+        background-position: #{$x} #{$y};
+      }
+    }
+  }
+}
