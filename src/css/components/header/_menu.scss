@@ -1,4 +1,4 @@
-@import "../constant";
+@import "../../constant";
 
 header .inner ul.menu {
   display: flex;
@@ -31,18 +31,18 @@ header .inner ul.menu {
     }
 
     &.apple-logo > a {
-      background-image: url("../../assets/images/header_apple.svg");
+      background-image: url("../../../assets/images/header_apple.svg");
     }
 
     &.search-starter > a {
-      background-image: url("../../assets/images/header_search.svg");
+      background-image: url("../../../assets/images/header_search.svg");
     }
 
     &.basket-starter {
       position: relative;
 
       > a {
-        background-image: url("../../assets/images/header_bag.svg");
+        background-image: url("../../../assets/images/header_bag.svg");
       }
     }
   }

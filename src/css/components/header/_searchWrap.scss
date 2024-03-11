@@ -1,4 +1,4 @@
-@import "../constant";
+@import "../../constant";
 
 header .inner .search-wrap {
   position: absolute;
@@ -45,12 +45,12 @@ header .inner .search-wrap {
     }
 
     .search-icon {
-      background-image: url("../../assets/images/header_search.svg");
+      background-image: url("../../../assets/images/header_search.svg");
       left: 0;
     }
 
     .search-closer {
-      background-image: url("../../assets/images/header_close.svg");
+      background-image: url("../../../assets/images/header_close.svg");
       right: 0;
       cursor: pointer;
 

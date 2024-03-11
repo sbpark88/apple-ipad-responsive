@@ -1,6 +1,6 @@
 // @ts-check
 
-import "../../../css/nav/index.scss";
+import "../../../css/components/nav/index.scss";
 
 import { init } from "../../utils/render";
 import template from "./index.html";
