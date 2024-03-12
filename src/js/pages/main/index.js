@@ -16,6 +16,7 @@ init(template)(() => {
   import("../../components/nav/index");
   import("./Hero");
   import("./Power");
+  import("./Display");
 
   /* SCROLL OBSERVER */
   const attachIO = (mutation) => {
