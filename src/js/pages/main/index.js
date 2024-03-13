@@ -18,6 +18,7 @@ init(template)(() => {
   import("./Power");
   import("./Display");
   import("./Camera");
+  import("./Wireless");
 
   /* SCROLL OBSERVER */
   const attachIO = (mutation) => {

@@ -1,0 +1,42 @@
+section.wireless {
+  margin-top: 202px;
+}
+
+section.wireless .facetime {
+  h1 {
+    width: 730px;
+    height: 330px;
+    background-image: url("../../../assets/images/wireless_headline.png");
+    transform: translate(104px, 0);
+  }
+
+  .figures {
+    height: 773px;
+
+    figure {
+      transform: translate(-68px, 0);
+    }
+
+    figcaption {
+      width: 139px;
+      height: 46px;
+      background-image: url("../../../assets/images/wireless_facetime_caption.png");
+      transform: translate(843px, -49px);
+    }
+  }
+}
+
+section.wireless .files {
+  .figures {
+    figure {
+      transform: translate(34px, -34px);
+    }
+
+    figcaption {
+      width: 127px;
+      height: 46px;
+      background-image: url("../../../assets/images/wireless_files_caption.png");
+      transform: translate(96px, 639px);
+    }
+  }
+}

@@ -9,8 +9,8 @@ import { pipe } from "../utils/fp";
 
 /**
  * Figures Component
- * @param title {string | undefined}
- * @param imgSrc {string}
+ * @param title {string?}
+ * @param imgSrc
  * @param imgAlt {string}
  * @param figcaptions {string | NodeListOf<Element> | Element}
  * @returns {string}
@@ -30,10 +30,10 @@ ${checkTitle(title)}
 
 /**
  * VideoFigures Component
- * @param title {string | undefined}
- * @param imgSrc {string}
+ * @param title {string?}
+ * @param imgSrc
  * @param imgAlt {string}
- * @param videoSrc {string}
+ * @param videoSrc
  * @param figcaptions {string | NodeListOf<Element> | Element}
  * @returns {string}
  * @constructor
@@ -97,8 +97,8 @@ export const activateVideoContolButtons = (parentEl) => {
 
 /**
  * Infos Component
- * @param infos { {icon: string, paragraph: string}[]}
- * @param position {string | undefined} - undefined(default), center, end
+ * @param infos { {icon: string, paragraph: string, links: {href: string, text: string}[]?}[]}
+ * @param position {string?} - undefined(default), center, end
  * @returns {string}
  * @constructor
  */
@@ -112,13 +112,26 @@ export const Infos = (infos, position) => `
  * Info Component
  * @param icon {string}
  * @param paragraph {string}
+ * @param links {{href: string, text: string}[]?}
  * @returns {string}
  * @constructor
  */
-const Info = ({ icon, paragraph }) => `
+const Info = ({ icon, paragraph, links }) => `
 <div class="info observe">
   <div class="icon icon--${icon}"></div>
   <p>${paragraph}</p>
+  ${
+    links
+      ? normalizeHTML(
+          links.map(
+            ({ href, text }) =>
+              `<a href="${href ?? "javascript:void(0)"}" class="link">
+              ${text}
+            </a>`,
+          ),
+        )
+      : ""
+  }
 </div>
 `;
 

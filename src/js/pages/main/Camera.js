@@ -34,6 +34,12 @@ const stageInfos = [
   },
 ];
 
+const editFigures = {
+  imgSrc: cameraEdit,
+  imgAlt: "사진 앱에서 편집되고 있는 이미지",
+  figcaptions: "사진도 동영상도 찍고 편집하고",
+};
+
 const editInfos = [
   {
     icon: "front-camera",
@@ -49,12 +55,6 @@ const editInfos = [
     paragraph: `다재다능한 후면 카메라로 문서를 스캔하고 몰입감 넘치는 AR 앱을 즐길 수도 있습니다.`,
   },
 ];
-
-const editFigures = {
-  imgSrc: cameraEdit,
-  imgAlt: "사진 앱에서 편집되고 있는 이미지",
-  figcaptions: "사진도 동영상도 찍고 편집하고",
-};
 
 const container = $("main section.camera");
 
