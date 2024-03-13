@@ -2,9 +2,15 @@
 
 import { $, render } from "../../utils/render";
 import { Figures, Infos } from "../../components/Features";
-import template from "./Display.html";
 import displayNotes from "../../../assets/images/display_notes.jpg";
 import displaySharePlay from "../../../assets/images/display_shareplay.png";
+
+const template = `
+<div class="inner">
+  <div class="notes"></div>
+  <div class="share-play feature"></div>
+</div>
+`;
 
 const notesFigures = {
   title: "빛나는 아이디어에 걸맞은 디스플레이",

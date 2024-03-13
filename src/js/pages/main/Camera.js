@@ -7,10 +7,16 @@ import {
   Infos,
   activateVideoContolButtons,
 } from "../../components/Features";
-import template from "./Camera.html";
 import cameraHardware from "../../../assets/images/camera_hardware.png";
 import centerStage from "../../../assets/videos/center-stage.mp4";
 import cameraEdit from "../../../assets/images/camera_edit.jpg";
+
+const template = `
+<div class="inner">
+  <div class="stage"></div>
+  <div class="edit feature"></div>
+</div>
+`;
 
 const stageVideoFigures = {
   title: "촬영에서 편집 공유까지 한 기기에서.",

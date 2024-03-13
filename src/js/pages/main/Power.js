@@ -2,10 +2,17 @@
 
 import { $, render } from "../../utils/render";
 import { Figures, Infos } from "../../components/Features";
-import template from "./Power.html";
 import powerMultipleApps from "../../../assets/images/power_multiple_apps.png";
 import powerArcade from "../../../assets/images/power_arcade.png";
 import powerCreate from "../../../assets/images/power_create.jpg";
+
+const template = `
+<div class="inner">
+  <div class="multiple-apps"></div>
+  <div class="arcade feature"></div>
+  <div class="create feature"></div>
+</div>
+`;
 
 const multipleAppsFigures = {
   title: "거침없는 일 처리 성능",
