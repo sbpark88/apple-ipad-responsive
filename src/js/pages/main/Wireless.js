@@ -39,11 +39,7 @@ const filesInfos = [
   {
     icon: "lte",
     paragraph: `Gigabit급 LTE 덕분에 Wi-Fi에 연결할 수 없는 경우에도 온라인 접속이 가능합니다.<sup><a href="#footnote3">3</a></sup>`,
-    links: [
-      {
-        text: "셀룰러에 대해 더 알아보기",
-      },
-    ],
+    links: [{ text: "셀룰러에 대해 더 알아보기" }],
   },
 ];
 

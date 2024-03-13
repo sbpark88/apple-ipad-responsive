@@ -1,0 +1,43 @@
+section.accessories {
+}
+
+section.accessories div.accessories {
+  h1 {
+    width: 550px;
+    height: 343px;
+    background-image: url("../../../assets/images/accessories_headline.png");
+    margin: 0 auto;
+  }
+
+  .figures {
+    height: 1021px;
+    margin-top: 34px;
+
+    figure {
+      transform: translate(-24px, 0);
+    }
+
+    figcaption {
+      .caption-memo {
+        width: 169px;
+        height: 41px;
+        background-image: url("../../../assets/images/accessories_caption_memo.png");
+        transform: translate(790px, -52px);
+      }
+      .caption-supports {
+        width: 200px;
+        height: 70px;
+        background-image: url("../../../assets/images/accessories_caption_supports.png");
+        transform: translate(163px, 821px);
+      }
+    }
+  }
+}
+
+section.accessories div.accessories {
+  .infos {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}

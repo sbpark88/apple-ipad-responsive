@@ -25,6 +25,10 @@
   flex-direction: column;
   z-index: 1;
 
+  &.infos--large .info {
+    max-width: 410px;
+  }
+
   &.infos--center {
     justify-content: center;
   }

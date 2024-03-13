@@ -98,7 +98,7 @@ export const activateVideoContolButtons = (parentEl) => {
 /**
  * Infos Component
  * @param infos { {icon: string, paragraph: string, links: {href: string, text: string}[]?}[]}
- * @param position {string?} - undefined(default), center, end
+ * @param position {string?} - undefined(default), center, end || large
  * @returns {string}
  * @constructor
  */
