@@ -17,6 +17,7 @@ init(template)(() => {
   import("./Hero");
   import("./Power");
   import("./Display");
+  import("./Camera");
 
   /* SCROLL OBSERVER */
   const attachIO = (mutation) => {

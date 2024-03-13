@@ -1,10 +1,10 @@
 @import "../../constant";
 
-.power {
+section.power {
   margin-top: 110px;
 }
 
-.power .multiple-apps {
+section.power .multiple-apps {
   h1 {
     width: 500px;
     height: 280px;
@@ -24,7 +24,7 @@
   }
 }
 
-.power .arcade {
+section.power .arcade {
   margin-top: 55px;
 
   .figures {
@@ -43,7 +43,7 @@
   }
 }
 
-.power .create {
+section.power .create {
   margin-top: 55px;
 
   .figures {
