@@ -1,7 +1,7 @@
 // @ts-check
 
 import { $, render } from "../../utils/render";
-import { Figures, Infos } from "../../components/Features";
+import { Figures, Infos, Title } from "../../components/Features";
 import accessories from "../../../assets/images/accessories.jpg";
 
 const template = `
@@ -51,5 +51,7 @@ const container = $("main section.accessories");
 
 render(container)(template);
 render($("div.accessories"))(
-  Figures({ ...accessoriesFigures }) + Infos(accessoriesInfos, "large"),
+  Title("손으로 쓰거나 키보드로 치거나.") +
+    Figures({ ...accessoriesFigures }) +
+    Infos(accessoriesInfos, "large"),
 );

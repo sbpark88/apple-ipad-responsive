@@ -8,16 +8,22 @@ import { toggleClassName } from "../utils/styleHelper";
 import { pipe } from "../utils/fp";
 
 /**
+ * Title Component
+ * @param title {string}
+ * @returns {string}
+ * @constructor
+ */
+export const Title = (title) => `<h1 class="bg-text">${title}</h1>`;
+
+/**
  * Figures Component
- * @param title {string?}
  * @param imgSrc
  * @param imgAlt {string}
  * @param figcaptions {string | NodeListOf<Element> | Element}
  * @returns {string}
  * @constructor
  */
-export const Figures = ({ title, imgSrc, imgAlt, figcaptions }) => `
-${checkTitle(title)}
+export const Figures = ({ imgSrc, imgAlt, figcaptions }) => `
 <div class="figures">
   <figure>
     <img src="${imgSrc}" alt="${imgAlt}" />
@@ -30,7 +36,6 @@ ${checkTitle(title)}
 
 /**
  * VideoFigures Component
- * @param title {string?}
  * @param imgSrc
  * @param imgAlt {string}
  * @param videoSrc
@@ -38,14 +43,7 @@ ${checkTitle(title)}
  * @returns {string}
  * @constructor
  */
-export const VideoFigures = ({
-  title,
-  imgSrc,
-  imgAlt,
-  videoSrc,
-  figcaptions,
-}) => `
-${checkTitle(title)}
+export const VideoFigures = ({ imgSrc, imgAlt, videoSrc, figcaptions }) => `
 <div class="figures">
   <figure>
     <img src="${imgSrc}" alt="${imgAlt}" />
@@ -134,6 +132,3 @@ const Info = ({ icon, paragraph, links }) => `
   }
 </div>
 `;
-
-const checkTitle = (title) =>
-  title ? `<h1 class="bg-text">${title}</h1>` : "";

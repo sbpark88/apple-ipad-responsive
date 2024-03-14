@@ -1,7 +1,7 @@
 // @ts-check
 
 import { $, render } from "../../utils/render";
-import { Figures, Infos } from "../../components/Features";
+import { Figures, Infos, Title } from "../../components/Features";
 import wirelessFacetime from "../../../assets/images/wireless_facetime.jpg";
 import wirelessFiles from "../../../assets/images/wireless_files.png";
 
@@ -13,7 +13,6 @@ const template = `
 `;
 
 const facetimeFigures = {
-  title: "선이 없다는 건 한계가 없다는 것.",
   imgSrc: wirelessFacetime,
   imgAlt: "19명이 참여 중인 FaceTime 영상 통화",
   figcaptions: "FACETIME으로 소통하고",
@@ -46,5 +45,7 @@ const filesInfos = [
 const container = $("main section.wireless");
 
 render(container)(template);
-render($("div.facetime"))(Figures({ ...facetimeFigures }));
+render($("div.facetime"))(
+  Title("선이 없다는 건 한계가 없다는 것.") + Figures({ ...facetimeFigures }),
+);
 render($("div.files"))(Infos(filesInfos) + Figures({ ...filesFigures }));

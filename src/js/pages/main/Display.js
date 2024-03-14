@@ -1,7 +1,7 @@
 // @ts-check
 
 import { $, render } from "../../utils/render";
-import { Figures, Infos } from "../../components/Features";
+import { Figures, Infos, Title } from "../../components/Features";
 import displayNotes from "../../../assets/images/display_notes.jpg";
 import displaySharePlay from "../../../assets/images/display_shareplay.png";
 
@@ -13,7 +13,6 @@ const template = `
 `;
 
 const notesFigures = {
-  title: "빛나는 아이디어에 걸맞은 디스플레이",
   imgSrc: displayNotes,
   imgAlt: "iPad의 Goodnotes 5 앱에서 편집 중인 손글씨 필기",
   figcaptions: "노트 필기는 GOODNOTES 5로",
@@ -41,7 +40,9 @@ const sharePlayInfos = [
 const container = $("main section.display");
 
 render(container)(template);
-render($("div.notes"))(Figures({ ...notesFigures }));
+render($("div.notes"))(
+  Title("빛나는 아이디어에 걸맞은 디스플레이") + Figures({ ...notesFigures }),
+);
 render($("div.share-play"))(
   Figures({ ...sharePlayFigures }) + Infos(sharePlayInfos, "center"),
 );

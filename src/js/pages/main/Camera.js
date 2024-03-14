@@ -6,6 +6,7 @@ import {
   VideoFigures,
   Infos,
   activateVideoContolButtons,
+  Title,
 } from "../../components/Features";
 import cameraHardware from "../../../assets/images/camera_hardware.png";
 import centerStage from "../../../assets/videos/center-stage.mp4";
@@ -19,7 +20,6 @@ const template = `
 `;
 
 const stageVideoFigures = {
-  title: "촬영에서 편집 공유까지 한 기기에서.",
   imgSrc: cameraHardware,
   imgAlt: "iPad의 영상 통화 중 센터 스테이지 기능이 사용되는 예시",
   videoSrc: centerStage,
@@ -60,7 +60,9 @@ const container = $("main section.camera");
 
 render(container)(template);
 render($("div.stage"))(
-  VideoFigures({ ...stageVideoFigures }) + Infos(stageInfos),
+  Title("촬영에서 편집 공유까지 한 기기에서.") +
+    VideoFigures({ ...stageVideoFigures }) +
+    Infos(stageInfos),
 );
 render($("div.edit"))(Infos(editInfos, "center") + Figures({ ...editFigures }));
 activateVideoContolButtons("div.stage");

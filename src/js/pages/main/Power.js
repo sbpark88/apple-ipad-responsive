@@ -1,7 +1,7 @@
 // @ts-check
 
 import { $, render } from "../../utils/render";
-import { Figures, Infos } from "../../components/Features";
+import { Figures, Infos, Title } from "../../components/Features";
 import powerMultipleApps from "../../../assets/images/power_multiple_apps.png";
 import powerArcade from "../../../assets/images/power_arcade.png";
 import powerCreate from "../../../assets/images/power_create.jpg";
@@ -15,7 +15,6 @@ const template = `
 `;
 
 const multipleAppsFigures = {
-  title: "거침없는 일 처리 성능",
   imgSrc: powerMultipleApps,
   imgAlt: "Keynote 마크업과 메시지가 함께 표시된 Split View",
   figcaptions: "동시에 여러 앱 사용 가능",
@@ -67,7 +66,9 @@ const createInfos = [
 const container = $("main section.power");
 
 render(container)(template);
-render($("div.multiple-apps"))(Figures({ ...multipleAppsFigures }));
+render($("div.multiple-apps"))(
+  Title("거침없는 일 처리 성능") + Figures({ ...multipleAppsFigures }),
+);
 render($("div.arcade"))(
   Figures({ ...arcadeFigures }) + Infos(arcadeInfos, "center"),
 );
