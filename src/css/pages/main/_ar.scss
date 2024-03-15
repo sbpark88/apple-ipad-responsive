@@ -1,0 +1,20 @@
+@import "../../constant";
+
+section.ar {
+  background-color: $color-section;
+  padding: 20px 20px 0;
+
+  .white-box {
+    padding-bottom: 0;
+  }
+
+  .inner {
+    display: flex;
+
+    > div {
+      max-width: 410px;
+      margin-top: 60px;
+      margin-right: 90px;
+    }
+  }
+}

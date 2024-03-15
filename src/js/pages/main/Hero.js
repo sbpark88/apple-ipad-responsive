@@ -3,6 +3,7 @@
 import { $, render } from "../../utils/render";
 import { Figures } from "../../components/Features";
 import heroIpad from "../../../assets/images/hero_ipad.jpg";
+import { Link } from "../../components/Common";
 
 const template = `
 <div class="inner">
@@ -16,8 +17,8 @@ const template = `
     모든 것을 부담 없이 누릴 수 있죠.
   </p>
   <div class="links">
-    <a href="javascript:void(0)" class="link">이벤트 시청하기</a>
-    <a href="javascript:void(0)" class="link">iPad를 선택하는 이유</a>
+    ${Link({ text: "이벤트 시청하기" })}
+    ${Link({ text: "iPad를 선택하는 이유" })}
   </div>
 </div>
 `;

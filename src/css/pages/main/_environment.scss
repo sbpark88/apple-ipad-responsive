@@ -1,0 +1,11 @@
+@import "../../constant";
+
+section.environment {
+  background-color: $color-section;
+  padding: 20px 20px 0;
+  text-align: center;
+
+  .inner h1 {
+    color: #03a10e;
+  }
+}

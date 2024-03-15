@@ -2,6 +2,7 @@
 
 import "../../../css/pages/main/index.scss";
 import "../../../css/components/features.scss";
+import "../../../css/components/whiteBox.scss";
 
 import { $, init } from "../../utils/render";
 import template from "./index.html";
@@ -24,6 +25,8 @@ init(template)(() => {
   import("./Apps");
   import("./Privacy");
   import("./Accessibility");
+  import("./Ar");
+  import("./Environment");
 
   /* SCROLL OBSERVER */
   const attachIO = (mutation) => {

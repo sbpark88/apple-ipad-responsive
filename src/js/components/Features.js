@@ -6,6 +6,7 @@ import videoPause from "../../assets/images/video-pause.svg";
 import { eventBind } from "../utils/eventBinding";
 import { toggleClassName } from "../utils/styleHelper";
 import { pipe } from "../utils/fp";
+import { Link } from "./Common";
 
 /**
  * Title Component
@@ -146,17 +147,6 @@ const Info = ({ icon, paragraph, links }) => `
 <div class="info observe">
   ${icon ? `<div class="icon icon--${icon}"></div>` : ""}
   <p>${paragraph}</p>
-  ${
-    links
-      ? normalizeHTML(
-          links.map(
-            ({ href, text }) =>
-              `<a href="${href ?? "javascript:void(0)"}" class="link">
-              ${text}
-            </a>`,
-          ),
-        )
-      : ""
-  }
+  ${links ? normalizeHTML(links.map((link) => Link({ ...link }))) : ""}
 </div>
 `;
