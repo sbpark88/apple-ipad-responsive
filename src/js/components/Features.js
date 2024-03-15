@@ -19,7 +19,7 @@ export const Title = (title) => `<h1 class="bg-text">${title}</h1>`;
  * Figures Component
  * @param imgSrc
  * @param imgAlt {string}
- * @param figcaptions {string | NodeListOf<Element> | Element}
+ * @param figcaptions {string | string[] | Element |  NodeListOf<Element>}
  * @returns {string}
  * @constructor
  */

@@ -22,6 +22,7 @@ init(template)(() => {
   import("./Accessories");
   import("./IPadOs");
   import("./Apps");
+  import("./Privacy");
 
   /* SCROLL OBSERVER */
   const attachIO = (mutation) => {
