@@ -1,5 +1,10 @@
 @import "../constant";
 
+.white-box-wrapper {
+  background-color: $color-section;
+  padding: 20px 20px 0;
+}
+
 .white-box {
   max-width: 1386px;
   margin: 0 auto;

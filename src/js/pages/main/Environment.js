@@ -7,7 +7,7 @@ import { Link } from "../../components/Common";
 
 const children = `
 ${Icon({ imgSrc: environmentIcon, imgAlt: "Environment Icon" })}
-<h1>환경</h1>
+<h1 style="color: #33a10e">환경</h1>
 <p>
   Apple은 제품의 라이프 사이클 전반에 걸쳐 우리의 환경 발자국에 대한 책임을 다합니다.<br />
   모든 Apple 제품과 포장재에 100% 재활용 및 재생 가능 소재만이 사용되는 그날을 위해 헌신적인 노력을 기울이고 있습니다.<br />

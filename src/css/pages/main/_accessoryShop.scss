@@ -1,7 +1,9 @@
-@import "../../constant";
-
 section.accessory-shop {
-  background-color: $color-section;
+  padding: 0;
+
+  .white-box {
+    padding-bottom: 0;
+  }
 
   .inner {
     display: flex;
