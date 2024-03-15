@@ -27,6 +27,8 @@ init(template)(() => {
   import("./Accessibility");
   import("./Ar");
   import("./Environment");
+  import("./AccessoryShop");
+  import("./Trade");
 
   /* SCROLL OBSERVER */
   const attachIO = (mutation) => {

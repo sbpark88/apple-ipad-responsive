@@ -16,6 +16,20 @@ export const WhiteBox = (children) => `
 </div>
 `;
 
+/**
+ *
+ * @param children {(string | string[] | Element |  NodeListOf<Element>)}
+ * @returns {string}
+ * @constructor
+ */
+export const TransparentBox = (children) => `
+<div class="white-box white-box--transparent">
+  <div class="inner">
+    ${normalizeHTML(children)}
+  </div>
+</div>
+`;
+
 export const Icon = ({ imgSrc, imgAlt }) =>
   `<img class="icon" src="${imgSrc}" alt="${imgAlt}" />`;
 export const Image = ({ imgSrc, imgAlt }) =>

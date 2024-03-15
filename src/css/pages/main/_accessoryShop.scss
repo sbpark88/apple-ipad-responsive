@@ -1,0 +1,15 @@
+@import "../../constant";
+
+section.accessory-shop {
+  background-color: $color-section;
+
+  .inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  img {
+    margin-top: 50px;
+  }
+}
