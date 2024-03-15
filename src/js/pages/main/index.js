@@ -21,6 +21,7 @@ init(template)(() => {
   import("./Wireless");
   import("./Accessories");
   import("./IPadOs");
+  import("./Apps");
 
   /* SCROLL OBSERVER */
   const attachIO = (mutation) => {

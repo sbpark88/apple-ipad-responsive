@@ -4,11 +4,7 @@ import { $, render } from "../../utils/render";
 import { Figures, Infos, Title } from "../../components/Features";
 import accessories from "../../../assets/images/accessories.jpg";
 
-const template = `
-<div class="inner">
-  <div class="accessories"></div>
-</div>
-`;
+const template = `<div class="inner"></div>`;
 
 const accessoriesFigures = {
   title: "손으로 쓰거나 키보드로 치거나.",
@@ -50,7 +46,7 @@ const accessoriesInfos = [
 const container = $("main section.accessories");
 
 render(container)(template);
-render($("div.accessories"))(
+render($("main section.accessories .inner"))(
   Title("손으로 쓰거나 키보드로 치거나.") +
     Figures({ ...accessoriesFigures }) +
     Infos(accessoriesInfos, "large"),

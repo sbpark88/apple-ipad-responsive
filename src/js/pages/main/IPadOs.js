@@ -6,11 +6,7 @@ import iPadOsSplitView from "../../../assets/images/ipados_split_view.png";
 import iPadOsWidget from "../../../assets/images/ipados_widgets.png";
 import iPadOsQuickNote from "../../../assets/images/ipados_quick_note.png";
 
-const template = `
-<div class="inner">
-  <div class="ipados"></div>
-</div>
-`;
+const template = `<div class="inner"></div>`;
 
 const iPadOsInfos = [
   {
@@ -46,8 +42,9 @@ const iPadOsFigures = [
 ];
 
 const container = $("main section.ipados");
+
 render(container)(template);
-render($("main section.ipados div.ipados"))(
+render($("main section.ipados div.inner"))(
   Title("iPadOS. 작업의 성공 방정식.") +
     Infos(iPadOsInfos, "large") +
     MultipleFigures(iPadOsFigures),

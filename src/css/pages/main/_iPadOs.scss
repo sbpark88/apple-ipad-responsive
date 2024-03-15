@@ -1,8 +1,6 @@
 section.ipados {
   margin-top: 212px;
-}
 
-section.ipados div.ipados {
   h1 {
     width: 530px;
     height: 400px;
@@ -22,45 +20,47 @@ section.ipados div.ipados {
     > div {
       flex-grow: 1;
       position: relative;
+    }
+  }
+}
 
-      &.figure-split-view {
-        figure {
-          transform: translate(-205px, -312px);
-        }
+section.ipados {
+  .figure-split-view {
+    figure {
+      transform: translate(-205px, -312px);
+    }
 
-        figcaption {
-          width: 163px;
-          height: 53px;
-          background-image: url("../../../assets/images/ipados_split_view_caption.png");
-          transform: translate(200px, -38px);
-        }
-      }
+    figcaption {
+      width: 163px;
+      height: 53px;
+      background-image: url("../../../assets/images/ipados_split_view_caption.png");
+      transform: translate(200px, -38px);
+    }
+  }
 
-      &.figure-widgets {
-        figure {
-          transform: translate(237px, 43px);
-        }
+  .figure-widgets {
+    figure {
+      transform: translate(237px, 43px);
+    }
 
-        figcaption {
-          width: 161px;
-          height: 46px;
-          background-image: url("../../../assets/images/ipados_widgets_caption.png");
-          transform: translate(257px, 497px);
-        }
-      }
+    figcaption {
+      width: 161px;
+      height: 46px;
+      background-image: url("../../../assets/images/ipados_widgets_caption.png");
+      transform: translate(257px, 497px);
+    }
+  }
 
-      &.figure-quick-note {
-        figure {
-          transform: translate(-625px, 232px);
-        }
+  .figure-quick-note {
+    figure {
+      transform: translate(-625px, 232px);
+    }
 
-        figcaption {
-          width: 82px;
-          height: 97px;
-          background-image: url("../../../assets/images/ipados_quick_note_caption.png");
-          transform: translate(511px, 470px);
-        }
-      }
+    figcaption {
+      width: 82px;
+      height: 97px;
+      background-image: url("../../../assets/images/ipados_quick_note_caption.png");
+      transform: translate(511px, 470px);
     }
   }
 }
