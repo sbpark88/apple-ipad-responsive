@@ -20,6 +20,7 @@ init(template)(() => {
   import("./Camera");
   import("./Wireless");
   import("./Accessories");
+  import("./IPadOs");
 
   /* SCROLL OBSERVER */
   const attachIO = (mutation) => {

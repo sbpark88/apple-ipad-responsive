@@ -5,7 +5,7 @@ import {
   Figures,
   VideoFigures,
   Infos,
-  activateVideoContolButtons,
+  activateVideoControlButtons,
   Title,
 } from "../../components/Features";
 import cameraHardware from "../../../assets/images/camera_hardware.png";
@@ -65,4 +65,4 @@ render($("div.stage"))(
     Infos(stageInfos),
 );
 render($("div.edit"))(Infos(editInfos, "center") + Figures({ ...editFigures }));
-activateVideoContolButtons("div.stage");
+activateVideoControlButtons("div.stage");

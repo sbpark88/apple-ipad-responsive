@@ -26,11 +26,32 @@ export const Title = (title) => `<h1 class="bg-text">${title}</h1>`;
 export const Figures = ({ imgSrc, imgAlt, figcaptions }) => `
 <div class="figures">
   <figure>
-    <img src="${imgSrc}" alt="${imgAlt}" />
-    <figcaption class="bg-text">
-      ${normalizeHTML(figcaptions)}
-    </figcaption>
+    ${Image({ imgSrc, imgAlt })}
+    ${Caption({ figcaptions })}
   </figure>
+</div>
+`;
+
+/**
+ * MultipleFigures Component
+ * @param figures {{ classSuffix, imgSrc, imgAlt, figcaptions }[]}
+ * @returns {string}
+ * @constructor
+ */
+export const MultipleFigures = (figures) => `
+<div class="figures">
+  ${normalizeHTML(
+    figures.map(
+      ({ classSuffix, imgSrc, imgAlt, figcaptions }) => `
+      <div class="figure-${classSuffix}">
+        <figure>
+          ${Image({ imgSrc, imgAlt })}
+          ${Caption({ figcaptions })}
+        </figure>
+      </div>
+      `,
+    ),
+  )}
 </div>
 `;
 
@@ -46,20 +67,27 @@ export const Figures = ({ imgSrc, imgAlt, figcaptions }) => `
 export const VideoFigures = ({ imgSrc, imgAlt, videoSrc, figcaptions }) => `
 <div class="figures">
   <figure>
-    <img src="${imgSrc}" alt="${imgAlt}" />
-    <div class="video-wrap">
-      <video src="${videoSrc}" muted autoplay loop></video>
-      <div class="controller--play hide">
-        재생 <img src="${videoPlay}" alt="Play" />
-      </div>
-      <div class="controller--pause">
-        일시정지 <img src="${videoPause}" alt="Pause" />
-      </div>
-    </div>
-    <figcaption class="bg-text">
-      ${normalizeHTML(figcaptions)}
-    </figcaption>
+    ${Image({ imgSrc, imgAlt })}
+    ${Video({ videoSrc })}
+    ${Caption({ figcaptions })}
   </figure>
+</div>
+`;
+
+const Image = ({ imgSrc, imgAlt }) => `<img src="${imgSrc}" alt="${imgAlt}" />`;
+
+const Caption = ({ figcaptions }) =>
+  `<figcaption class="bg-text">${normalizeHTML(figcaptions)}</figcaption>`;
+
+const Video = ({ videoSrc }) => `
+<div class="video-wrap">
+  <video src="${videoSrc}" muted autoplay loop></video>
+  <div class="controller--play hide">
+    재생 <img src="${videoPlay}" alt="Play" />
+  </div>
+  <div class="controller--pause">
+    일시정지 <img src="${videoPause}" alt="Pause" />
+  </div>
 </div>
 `;
 
@@ -68,7 +96,7 @@ export const VideoFigures = ({ imgSrc, imgAlt, videoSrc, figcaptions }) => `
  * @param parentEl
  * @returns {[playVideo, pauseVideo]}
  */
-export const activateVideoContolButtons = (parentEl) => {
+export const activateVideoControlButtons = (parentEl) => {
   const video = $(`${parentEl} video`);
   const playBtn = $(`${parentEl} .controller--play`);
   const pauseBtn = $(`${parentEl} .controller--pause`);
@@ -95,7 +123,7 @@ export const activateVideoContolButtons = (parentEl) => {
 
 /**
  * Infos Component
- * @param infos { {icon: string, paragraph: string, links: {href: string, text: string}[]?}[]}
+ * @param infos { {icon: string?, paragraph: string, links: {href: string, text: string}[]?}[]}
  * @param position {string?} - undefined(default), center, end || large
  * @returns {string}
  * @constructor
@@ -108,7 +136,7 @@ export const Infos = (infos, position) => `
 
 /**
  * Info Component
- * @param icon {string}
+ * @param icon {string?}
  * @param paragraph {string}
  * @param links {{href: string, text: string}[]?}
  * @returns {string}
@@ -116,7 +144,7 @@ export const Infos = (infos, position) => `
  */
 const Info = ({ icon, paragraph, links }) => `
 <div class="info observe">
-  <div class="icon icon--${icon}"></div>
+  ${icon ? `<div class="icon icon--${icon}"></div>` : ""}
   <p>${paragraph}</p>
   ${
     links
