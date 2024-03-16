@@ -1,0 +1,15 @@
+@import "../../constant";
+
+footer .inner .how-to-shop {
+  font-size: 12px;
+  line-height: 1.4;
+  color: $color-font-darkgray;
+
+  a {
+    color: $color-link;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

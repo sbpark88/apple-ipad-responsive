@@ -13,6 +13,6 @@ init(
   import("./Warning");
   import("./Breadcrumbs");
   import("./Navigations");
-  // import('./HowToShop')
-  // import('./Legal')
+  import("./HowToShop");
+  import("./Legal");
 });
