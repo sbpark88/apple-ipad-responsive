@@ -11,7 +11,7 @@ init(
 )(() => {
   import("./BuyInfo");
   import("./Warning");
-  // import("./Breadcrumbs");
+  import("./Breadcrumbs");
   // import('./Navigations')
   // import('./HowToShop')
   // import('./Legal')
