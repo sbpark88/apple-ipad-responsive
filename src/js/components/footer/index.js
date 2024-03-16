@@ -12,7 +12,7 @@ init(
   import("./BuyInfo");
   import("./Warning");
   import("./Breadcrumbs");
-  // import('./Navigations')
+  import("./Navigations");
   // import('./HowToShop')
   // import('./Legal')
 });

@@ -1,7 +1,7 @@
 // @ts-check
 
 import { normalizeHTML } from "../utils/render";
-import { Link } from "./Common";
+import { BlockLink } from "./Common";
 
 /**
  * Catalog Component
@@ -33,7 +33,7 @@ export const Catalog = ({
   <p class="tagline">${tagline}</p>
   <p class="price">₩${price.toLocaleString("en-US")}부터</p>
   <button class="btn">구입하기</button>
-  ${Link({ href: href, text: "더 알아보기" })}
+  ${BlockLink({ href: href, text: "더 알아보기" })}
 </div>
 `;
 

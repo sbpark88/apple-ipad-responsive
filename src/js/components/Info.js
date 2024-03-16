@@ -1,6 +1,6 @@
 // @ts-check
 
-import { Link } from "./Common";
+import { BlockLink } from "./Common";
 
 /**
  * Info Component
@@ -17,6 +17,6 @@ export const Info = ({ imgSrc, imgAlt, title, paragraph, url: href }) => `
   <img class="icon" src="${imgSrc}" alt="${imgAlt}" />
   <h3>${title}</h3>
   <p>${paragraph}</p>
-  ${Link({ href: href, text: "더 알아보기" })}
+  ${BlockLink({ href: href, text: "더 알아보기" })}
 </div>
 `;
