@@ -15,6 +15,8 @@ import {
 init(template)(() => {
   import("../../components/header/index");
   import("../../components/nav/index");
+  import("../../components/footer/index");
+
   import("./Hero");
   import("./Power");
   import("./Display");
