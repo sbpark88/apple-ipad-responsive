@@ -1,0 +1,19 @@
+@import "../../constant";
+
+footer .inner .warning {
+  padding: 18px 0 10px;
+  border-top: 1px solid $color-border;
+  border-bottom: 1px solid $color-border;
+
+  ol {
+    list-style: decimal;
+    padding-left: 16px;
+  }
+
+  li {
+    margin-bottom: 10px;
+    font-size: 11px;
+    line-height: 1.5;
+    color: $color-font-darkgray;
+  }
+}

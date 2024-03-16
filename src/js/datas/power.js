@@ -46,7 +46,7 @@ export const createInfos = [
   },
   {
     icon: "battery",
-    paragraph:
-      "온종일 가는 배터리를 갖춘 iPad. 당신이 열공 모드일 때도, 게임 삼매경에 빠져 있을 때도 늘 함께할 준비가 되어 있습니다.",
+    paragraph: `온종일 가는 배터리를 갖춘 iPad. 당신이 열공 모드일 때도,
+      게임 삼매경에 빠져 있을 때도 늘 함께할 준비가 되어 있습니다.<sup><a href="#footnote1">1</a></sup>`,
   },
 ];

@@ -10,7 +10,7 @@ import { Link } from "./Common";
  * @param name {string}
  * @param tagline {string}
  * @param price {number}
- * @param url {string}
+ * @param href
  * @returns {string}
  * @constructor
  */
@@ -20,7 +20,7 @@ export const Catalog = ({
   name,
   tagline,
   price,
-  url,
+  url: href,
 }) => `
 <div class="item">
   <div class="thumbnail">
@@ -33,7 +33,7 @@ export const Catalog = ({
   <p class="tagline">${tagline}</p>
   <p class="price">₩${price.toLocaleString("en-US")}부터</p>
   <button class="btn">구입하기</button>
-  ${Link({ href: url, text: "더 알아보기" })}
+  ${Link({ href: href, text: "더 알아보기" })}
 </div>
 `;
 

@@ -10,7 +10,7 @@ init(
   "footer",
 )(() => {
   import("./BuyInfo");
-  // import("./Warning");
+  import("./Warning");
   // import("./Breadcrumbs");
   // import('./Navigations')
   // import('./HowToShop')
