@@ -193,7 +193,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 
 <!-- images 디렉토리를 만들고, screenshot.png 파일을 추가한다. 배포된 프로젝트 경로를 추가한다. -->
-[product-screenshot]:images/screenshot.png
+[product-screenshot]:images/screenshot.jpeg
 [product-deploy-url]:https://ipad-gamma-rouge.vercel.app
 
 
