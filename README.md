@@ -129,7 +129,7 @@ brew install npm
    ```
 3. Run the script
    ```shell
-   npm run start
+   npm run serve
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -151,12 +151,12 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] 데스크탑 페이지
+- [X] 데스크탑 페이지
 - [ ] 태블릿 페이지
 - [ ] 모바일 페이지
 - [ ] 배포
-    - [ ] Webpack Configuration
-    - [ ] Deploy on Netlify
+    - [X] Webpack Configuration
+    - [X] Deploy on Vercel
     - [ ] Finish README update
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -194,7 +194,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <!-- images 디렉토리를 만들고, screenshot.png 파일을 추가한다. 배포된 프로젝트 경로를 추가한다. -->
 [product-screenshot]:images/screenshot.png
-[product-deploy-url]:about:blank
+[product-deploy-url]:https://ipad-gamma-rouge.vercel.app
 
 
 <!--
