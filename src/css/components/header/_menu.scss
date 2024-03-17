@@ -1,5 +1,6 @@
 @import "../../constant";
 
+/* ul.menu */
 header .inner ul.menu {
   display: flex;
   height: $header-height;
@@ -46,77 +47,115 @@ header .inner ul.menu {
       }
     }
   }
+}
 
-  /* basket in basket-starter */
-  .basket {
-    $border: 1px solid $color-border;
-    $text-size: 13px;
-
-    width: 290px;
-    padding: 10px 20px;
-    border: $border;
-    border-radius: 10px;
-    box-sizing: border-box;
-    background-color: $color-white;
-    position: absolute;
-    top: calc(100% + 4px);
-    right: -6px;
-    visibility: hidden;
-    opacity: 0;
-    transition: 0.4s;
-
-    &.show {
-      visibility: visible;
-      opacity: 1;
+/* header.searching 전환 효과 */
+header {
+  // 검색창이 사라질 때(=header 태그에 searching 클래스가 제거될 때) 적용될 스타일.
+  .inner ul.menu {
+    > li {
+      transition: $search-bar-transition-time;
     }
 
-    .arrow {
-      $size: 20px;
-
-      width: $size; // 20px;
-      height: calc($size / 2); // 10px;
-      position: absolute;
-      top: calc($size / -2); // -10px;
-      right: 12px;
-      overflow: hidden;
-
-      &::before {
-        $size: 12px;
-        content: "";
-        width: $size;
-        height: $size;
-        border: $border;
-        background-color: $color-white;
-        transform: rotate(45deg);
-        transform-origin: 0 0;
-        position: absolute;
-        top: 0;
-        left: 50%;
+    @for $i from 1 through $header-li-length {
+      > li:nth-child(#{$i}) {
+        // 첫번째 엘리먼트: 지연 없음, 마지막 엘리먼트로 가면서 지연시간이 증가. 지연시간의 최대는 $transition-time 을 넘지 않도록 갯수로 나눔.
+        transition-delay: calc(
+          #{$i} * ($search-bar-transition-time / #{$header-li-length})
+        );
       }
     }
+  }
 
-    .message {
-      padding: 30px 0;
-      font-size: $text-size;
-      color: $color-font-darkgray;
-      text-align: center;
+  // 검색창이 열릴 때(=header 태그에 searching 클래스가 추가될 때) 적용될 스타일.
+  &.searching .inner ul.menu {
+    > li {
+      transform: scale(0.7);
+      opacity: 0;
     }
 
-    ul {
-      margin-top: 10px;
+    @for $i from 1 through $header-li-length {
+      > li:nth-child(#{$i}) {
+        // 마지막 엘리먼트: 지연 없음, 첫 번째 엘리먼트로 가면서 지연시간이 증가. 지연시간의 최대는 $transition-time 을 넘지 않도록 갯수로 나눔.
+        transition-delay: calc(
+          #{$header-li-length -
+            $i} *
+            ($search-bar-transition-time / #{$header-li-length})
+        );
+      }
+    }
+  }
+}
 
-      li {
-        border-top: $border;
+/* basket in basket-starter */
+header .inner ul.menu .basket {
+  $border: 1px solid $color-border;
+  $text-size: 13px;
 
-        a {
-          display: block;
-          padding: 14px;
-          font-size: $text-size;
-          color: $color-link;
+  width: 290px;
+  padding: 10px 20px;
+  border: $border;
+  border-radius: 10px;
+  box-sizing: border-box;
+  background-color: $color-white;
+  position: absolute;
+  top: calc(100% + 4px);
+  right: -6px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.4s;
 
-          &:hover {
-            text-decoration: underline;
-          }
+  &.show {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .arrow {
+    $size: 20px;
+
+    width: $size; // 20px;
+    height: calc($size / 2); // 10px;
+    position: absolute;
+    top: calc($size / -2); // -10px;
+    right: 12px;
+    overflow: hidden;
+
+    &::before {
+      $size: 12px;
+      content: "";
+      width: $size;
+      height: $size;
+      border: $border;
+      background-color: $color-white;
+      transform: rotate(45deg);
+      transform-origin: 0 0;
+      position: absolute;
+      top: 0;
+      left: 50%;
+    }
+  }
+
+  .message {
+    padding: 30px 0;
+    font-size: $text-size;
+    color: $color-font-darkgray;
+    text-align: center;
+  }
+
+  ul {
+    margin-top: 10px;
+
+    li {
+      border-top: $border;
+
+      a {
+        display: block;
+        padding: 14px;
+        font-size: $text-size;
+        color: $color-link;
+
+        &:hover {
+          text-decoration: underline;
         }
       }
     }

@@ -1,5 +1,7 @@
 @import "../../constant";
 
+$icon-width: 40px;
+
 header .inner .search-wrap {
   position: absolute;
   top: 0;
@@ -20,7 +22,6 @@ header .inner .search-wrap {
 
   .search .text-filed {
     position: relative;
-    $icon-width: 40px;
 
     input {
       width: 100%;
@@ -87,6 +88,67 @@ header .inner .search-wrap {
       &:hover a {
         background-color: $color-section;
         color: $color-link;
+      }
+    }
+  }
+}
+
+/* header.searching 전환 효과 */
+header {
+  // 검색창이 사라질 때(=header 태그에 searching 클래스가 제거될 때) 적용될 스타일.
+  .search-wrap {
+    visibility: hidden;
+    opacity: 0;
+    transition: $search-bar-transition-time;
+
+    .search {
+      input,
+      .search-icon,
+      .autocompletes h3,
+      .autocompletes li {
+        transition: $search-bar-transition-time;
+        transform: translateX(100px);
+      }
+
+      .autocompletes {
+        @for $i from 1 through $autocompletes-li-length {
+          li:nth-child(#{$i}) {
+            transition-delay: calc(
+              #{$autocompletes-li-length -
+                $i} *
+                ($search-bar-transition-time / #{$autocompletes-li-length})
+            );
+          }
+        }
+      }
+    }
+  }
+
+  // 검색창이 열릴 때(=header 태그에 searching 클래스가 추가될 때) 적용될 스타일.
+  &.searching .search-wrap {
+    visibility: visible;
+    opacity: 1;
+    /* 이미 시간초이기 때문에 calc 결과에 s 를 붙이지 않는다 */
+    transition-delay: calc(#{$search-bar-transition-time} / 2);
+
+    .search {
+      input,
+      .search-icon,
+      .autocompletes h3,
+      .autocompletes li {
+        transition-delay: calc(#{$search-bar-transition-time} / 2);
+        transform: translateX(0);
+      }
+
+      .autocompletes {
+        @for $i from 1 through $autocompletes-li-length {
+          li:nth-child(#{$i}) {
+            transition-delay: calc(
+              #{$i} *
+                ($search-bar-transition-time / #{$autocompletes-li-length})
+            );
+          }
+        }
       }
     }
   }
