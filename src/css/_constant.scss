@@ -1,8 +1,13 @@
+/* BREAK POINT */
+$breakpoint-tablet: 1000px;
+$breakpoint-mobile: 740px;
+
 /* COLOR */
 $color-white: #fff;
 $color-black: #000;
 $color-font: #1d1d1d;
 $color-font-darkgray: #6e6e6e;
+$color-font-middlegray: #b7b7b7;
 $color-font-lightgray: #f5f5f5;
 $color-link: #0071e3;
 $color-link-focus: #81b9f1;
@@ -18,3 +23,4 @@ $header-height: 44px;
 $header-li-length: 13;
 $search-bar-transition-time: 0.4s;
 $autocompletes-li-length: 6;
+$mobile-header-max-width: 590px;

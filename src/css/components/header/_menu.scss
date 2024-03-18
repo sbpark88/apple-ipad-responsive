@@ -1,49 +1,100 @@
 @import "../../constant";
+@import "../../mixins";
 
 /* ul.menu */
-header .inner ul.menu {
-  display: flex;
-  height: $header-height;
-  justify-content: space-between;
-
-  > li {
+header {
+  .inner ul.menu {
     display: flex;
+    height: $header-height;
+    justify-content: space-between;
 
-    > a {
-      padding: 0 10px;
-      font-size: 11px;
+    > li {
       display: flex;
-      align-items: center;
-      color: $color-font-lightgray;
-      opacity: 0.8;
 
-      &:hover {
-        opacity: 1;
+      &.menu-starter {
+        display: none;
       }
-    }
 
-    &.apple-logo > a,
-    &.search-starter > a,
-    &.basket-starter > a {
-      width: 14px;
-      text-indent: -9999px;
-      background-repeat: no-repeat;
-      background-position: center 13px;
-    }
+      @include mobile {
+        display: none;
 
-    &.apple-logo > a {
-      background-image: url("../../../assets/images/header_apple.svg");
-    }
+        &.menu-starter,
+        &.apple-logo,
+        &.basket-starter {
+          display: flex;
+        }
 
-    &.search-starter > a {
-      background-image: url("../../../assets/images/header_search.svg");
-    }
+        &.menu-starter {
+          div:first-child {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+          }
 
-    &.basket-starter {
-      position: relative;
+          span {
+            display: block;
+            width: 15px;
+            height: 1px;
+            background-color: $color-white;
+            transition-duration: 0.4s;
+          }
+        }
+      }
 
       > a {
-        background-image: url("../../../assets/images/header_bag.svg");
+        padding: 0 10px;
+        font-size: 11px;
+        display: flex;
+        align-items: center;
+        color: $color-font-lightgray;
+        opacity: 0.8;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      &.apple-logo > a,
+      &.search-starter > a,
+      &.basket-starter > a {
+        width: 14px;
+        text-indent: -9999px;
+        background-repeat: no-repeat;
+        background-position: center 13px;
+      }
+
+      &.apple-logo > a {
+        background-image: url("../../../assets/images/header_apple.svg");
+      }
+
+      &.search-starter > a {
+        background-image: url("../../../assets/images/header_search.svg");
+      }
+
+      &.basket-starter {
+        position: relative;
+
+        > a {
+          background-image: url("../../../assets/images/header_bag.svg");
+        }
+      }
+    }
+  }
+
+  &.menuing .inner ul.menu {
+    > li {
+      span:first-child {
+        transform: translateY(3.5px) rotate(45deg);
+      }
+      span:last-child {
+        transform: translateY(-3.5px) rotate(-45deg);
+      }
+
+      &.basket-starter {
+        opacity: 0;
+        visibility: hidden;
       }
     }
   }

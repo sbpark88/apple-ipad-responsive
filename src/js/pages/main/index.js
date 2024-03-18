@@ -32,7 +32,6 @@ init(template)(() => {
   import("./AccessoryShop");
   import("./Trade");
   import("./Compare");
-  // test
 
   /* SCROLL OBSERVER */
   const attachIO = (mutation) => {

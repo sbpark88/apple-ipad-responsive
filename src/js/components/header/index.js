@@ -11,4 +11,5 @@ init(
 )(() => {
   import("./Menu");
   import("./SearchWrap");
+  import("./CloneMenu");
 });
