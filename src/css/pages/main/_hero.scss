@@ -1,10 +1,19 @@
 @import "../../constant";
+@import "../../mixins";
 
 section.hero {
   background-color: $color-section;
 
   .inner {
     padding-bottom: 110px;
+
+    @include tablet {
+      padding-bottom: 80px;
+    }
+
+    @include mobile {
+      padding-top: 40px;
+    }
   }
 }
 
@@ -16,15 +25,30 @@ section.hero {
     position: absolute;
     transform: translate(624px, 235px);
     z-index: 1;
+
+    @include mobile {
+      margin: 0 auto 40px;
+      position: static;
+      transform: none;
+    }
   }
 
   .figures {
     height: 808px; // figure image height
 
+    @include tablet {
+      height: 584px;
+    }
+
+    @include mobile {
+      height: 512px;
+    }
+
     figure {
       transform: translate(74px, -64px);
 
-      img {
+      @include mobile {
+        transform: none;
       }
 
       figcaption {
@@ -33,18 +57,45 @@ section.hero {
           height: 84px;
           background-image: url("../../../assets/images/hero_ipad_caption_camera.png");
           transform: translate(43px, 580px);
+
+          @include tablet {
+            transform: translate(-9px, 524px);
+          }
+
+          @include mobile {
+            width: 180px;
+            height: 37px;
+            background-image: url("../../../assets/images/hero_ipad_caption_camera_mobile.png");
+            transform: scale($scale-0-point-8-recover) translate(36px, 376px);
+          }
         }
         .caption-chip {
           width: 95px;
           height: 43px;
           background-image: url("../../../assets/images/hero_ipad_caption_chip.png");
           transform: translate(589px, 510px);
+
+          @include tablet {
+            transform: translate(510px, 422px);
+          }
+
+          @include mobile {
+            transform: translate(260px, 44px);
+          }
         }
         .caption-storage {
           width: 80px;
           height: 43px;
           background-image: url("../../../assets/images/hero_ipad_caption_storage.png");
           transform: translate(627px, 631px);
+
+          @include tablet {
+            transform: translate(556px, 556px);
+          }
+
+          @include mobile {
+            transform: translate(300px, 170px);
+          }
         }
       }
     }
@@ -57,6 +108,18 @@ section.hero {
     height: 145px;
     margin: 0 auto;
     background-image: url("../../../assets/images/hero_headline.png");
+
+    @include tablet {
+      width: 515px;
+      height: 95px;
+    }
+
+    @include mobile {
+      width: 295px;
+      height: 185px;
+      background-image: url("../../../assets/images/hero_headline_mobile.png");
+      transform: scale($scale-0-point-7-recover);
+    }
   }
 
   p.pricing {
@@ -64,6 +127,10 @@ section.hero {
     font-size: 24px;
     font-weight: 600;
     text-align: center;
+
+    @include mobile {
+      font-size: 20px;
+    }
   }
 
   p.description {
@@ -71,6 +138,11 @@ section.hero {
     margin: 18px auto 0;
     font-size: 19px;
     text-align: center;
+
+    @include mobile {
+      width: auto;
+      font-size: 17px;
+    }
   }
 
   .links {
