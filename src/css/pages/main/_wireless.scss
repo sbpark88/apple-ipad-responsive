@@ -1,5 +1,14 @@
+@import "../../mixins";
+
 section.wireless {
   margin-top: 202px;
+
+  @include tablet {
+    margin-top: 140px;
+  }
+  @include mobile {
+    margin-top: 120px;
+  }
 }
 
 section.wireless .facetime {
@@ -8,13 +17,49 @@ section.wireless .facetime {
     height: 330px;
     background-image: url("../../../assets/images/wireless_headline.png");
     transform: translate(104px, 0);
+
+    @include tablet {
+      width: 450px;
+      height: 200px;
+      transform: translate(70px, 0);
+    }
+    @include mobile {
+      width: 312px;
+      height: 223px;
+      background-image: url("../../../assets/images/wireless_headline_mobile.png");
+      transform: none;
+      margin: 0 auto;
+    }
   }
 
   .figures {
     height: 773px;
 
+    @include tablet {
+      height: 530px;
+    }
+    @include mobile {
+      height: auto;
+      margin-top: 64px;
+    }
+
     figure {
       transform: translate(-68px, 0);
+
+      @include tablet {
+        transform: none;
+      }
+      @include mobile {
+      }
+
+      img {
+        @include tablet {
+          width: 769px;
+        }
+        @include mobile {
+          width: 490px;
+        }
+      }
     }
 
     figcaption {
@@ -22,14 +67,40 @@ section.wireless .facetime {
       height: 46px;
       background-image: url("../../../assets/images/wireless_facetime_caption.png");
       transform: translate(843px, -49px);
+
+      @include tablet {
+        transform: scale(0.8) translate(670px, -60px);
+      }
+      @include mobile {
+        transform: scale(0.8) translate(120px, -45px);
+      }
     }
   }
 }
 
 section.wireless .files {
   .figures {
+    @include mobile {
+      margin-top: 30px;
+    }
+
     figure {
       transform: translate(34px, -34px);
+
+      @include mobile {
+        transform: translate(20px, 0);
+      }
+
+      img {
+        @include tablet {
+          width: 667px;
+          transform: translate(0, 80px);
+        }
+        @include mobile {
+          width: 450px;
+          transform: none;
+        }
+      }
     }
 
     figcaption {
@@ -37,6 +108,13 @@ section.wireless .files {
       height: 46px;
       background-image: url("../../../assets/images/wireless_files_caption.png");
       transform: translate(96px, 639px);
+
+      @include tablet {
+        transform: scale(0.8) translate(60px, 622px);
+      }
+      @include mobile {
+        transform: scale(0.8) translate(73px, 355px);
+      }
     }
   }
 }
