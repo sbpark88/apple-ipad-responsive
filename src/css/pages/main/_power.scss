@@ -59,19 +59,19 @@ section.power .multiple-apps {
           width: 462px;
         }
       }
+    }
 
-      figcaption {
-        width: 138px;
-        height: 46px;
-        background-image: url("../../../assets/images/power_multiple_apps_caption.png");
-        transform: translate(703px, -47px);
+    figcaption {
+      width: 138px;
+      height: 46px;
+      background-image: url("../../../assets/images/power_multiple_apps_caption.png");
+      transform: translate(703px, -47px);
 
-        @include tablet {
-          transform: scale(0.8) translate(532px, -58px);
-        }
-        @include mobile {
-          transform: scale(0.8) translate(112px, -45px);
-        }
+      @include tablet {
+        transform: scale(0.8) translate(532px, -58px);
+      }
+      @include mobile {
+        transform: scale(0.8) translate(112px, -45px);
       }
     }
   }
@@ -119,20 +119,20 @@ section.power .arcade {
           width: 458px;
         }
       }
+    }
 
-      figcaption {
-        width: 150px;
-        height: 77px;
-        background-image: url("../../../assets/images/power_arcade_caption.png");
-        transform: translate(483px, 653px);
+    figcaption {
+      width: 150px;
+      height: 77px;
+      background-image: url("../../../assets/images/power_arcade_caption.png");
+      transform: translate(483px, 653px);
 
-        @include tablet {
-          transform: scale(0.8) translate(316px, 528px);
-        }
+      @include tablet {
+        transform: scale(0.8) translate(316px, 528px);
+      }
 
-        @include mobile {
-          transform: scale(0.8) translate(316px, 368px);
-        }
+      @include mobile {
+        transform: scale(0.8) translate(316px, 368px);
       }
     }
   }
@@ -172,20 +172,20 @@ section.power .create {
           width: 525px;
         }
       }
+    }
 
-      figcaption {
-        width: 142px;
-        height: 46px;
-        background-image: url("../../../assets/images/power_create_caption.png");
-        transform: translate(543px, 908px);
+    figcaption {
+      width: 142px;
+      height: 46px;
+      background-image: url("../../../assets/images/power_create_caption.png");
+      transform: translate(543px, 908px);
 
-        @include tablet {
-          transform: scale(0.8) translate(420px, 747px);
-        }
+      @include tablet {
+        transform: scale(0.8) translate(420px, 747px);
+      }
 
-        @include mobile {
-          transform: scale(0.8) translate(254px, 486px);
-        }
+      @include mobile {
+        transform: scale(0.8) translate(254px, 486px);
       }
     }
   }

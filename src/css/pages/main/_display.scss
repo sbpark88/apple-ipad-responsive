@@ -57,19 +57,19 @@ section.display .notes {
           width: 458px;
         }
       }
+    }
 
-      figcaption {
-        width: 145px;
-        height: 45px;
-        background-image: url("../../../assets/images/display_notes_caption.png");
-        transform: translate(707px, -16px);
+    figcaption {
+      width: 145px;
+      height: 45px;
+      background-image: url("../../../assets/images/display_notes_caption.png");
+      transform: translate(707px, -16px);
 
-        @include tablet {
-          transform: scale(0.8) translate(540px, -34px);
-        }
-        @include mobile {
-          transform: scale(0.8) translate(220px, -45px);
-        }
+      @include tablet {
+        transform: scale(0.8) translate(540px, -34px);
+      }
+      @include mobile {
+        transform: scale(0.8) translate(220px, -45px);
       }
     }
   }
@@ -111,19 +111,19 @@ section.display .share-play {
           width: 460px;
         }
       }
+    }
 
-      figcaption {
-        width: 110px;
-        height: 48px;
-        background-image: url("../../../assets/images/display_shareplay_caption.png");
-        transform: translate(300px, 658px);
+    figcaption {
+      width: 110px;
+      height: 48px;
+      background-image: url("../../../assets/images/display_shareplay_caption.png");
+      transform: translate(300px, 658px);
 
-        @include tablet {
-          transform: scale(0.8) translate(261px, 540px);
-        }
-        @include mobile {
-          transform: scale(0.8) translate(261px, 358px);
-        }
+      @include tablet {
+        transform: scale(0.8) translate(261px, 540px);
+      }
+      @include mobile {
+        transform: scale(0.8) translate(261px, 358px);
       }
     }
   }

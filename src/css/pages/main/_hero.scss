@@ -11,7 +11,7 @@ section.hero {
       padding-bottom: 80px;
     }
     @include mobile {
-      padding-bottom: 40px;
+      padding-top: 40px;
     }
   }
 }
@@ -76,13 +76,15 @@ section.hero {
           transform: translate(43px, 580px);
 
           @include tablet {
-            transform: scale(0.8) translate(-9px, 524px);
+            //transform: scale(0.8) translate(-9px, 524px);
+            transform: translate(-9px, 524px);
           }
           @include mobile {
             width: 180px;
             height: 37px;
             background-image: url("../../../assets/images/hero_ipad_caption_camera_mobile.png");
-            transform: scale(1) translate(21px, 368px);
+            //transform: scale(1) translate(21px, 368px);
+            transform: translate(21px, 368px);
           }
         }
         .caption-chip {
@@ -92,10 +94,12 @@ section.hero {
           transform: translate(589px, 510px);
 
           @include tablet {
-            transform: scale(0.8) translate(510px, 422px);
+            //transform: scale(0.8) translate(510px, 422px);
+            transform: translate(510px, 422px);
           }
           @include mobile {
-            transform: scale(0.8) translate(248px, 42px);
+            //transform: scale(0.8) translate(248px, 42px);
+            transform: translate(248px, 42px);
           }
         }
         .caption-storage {
@@ -128,6 +132,9 @@ section.hero {
       height: 95px;
     }
     @include mobile {
+      width: 295px;
+      height: 185px;
+      background-image: url("../../../assets/images/hero_headline_mobile.png");
     }
   }
 
