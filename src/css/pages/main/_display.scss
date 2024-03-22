@@ -1,5 +1,11 @@
+@import "../../mixins";
+
 section.display {
   margin-top: 450px;
+
+  @include tablet {
+    margin-top: 180px;
+  }
 }
 
 section.display .notes {
@@ -8,18 +14,63 @@ section.display .notes {
     height: 370px;
     background-image: url("../../../assets/images/display_headline.png");
     transform: translate(104px, 0);
+
+    @include tablet {
+      width: 400px;
+      height: 240px;
+      transform: translate(120px, 0);
+    }
+    @include mobile {
+      width: 290px;
+      height: 308px;
+      background-image: url("../../../assets/images/display_headline_mobile.png");
+      transform: none;
+      margin: 0 auto;
+    }
   }
 
   .figures {
-    display: block;
     height: 814px; // figure image height
     margin-top: 26px;
 
-    figcaption {
-      width: 145px;
-      height: 45px;
-      background-image: url("../../../assets/images/display_notes_caption.png");
-      transform: translate(707px, -16px);
+    @include tablet {
+      height: 530px;
+    }
+    @include mobile {
+      height: auto;
+      margin-top: 60px;
+    }
+
+    figure {
+      @include tablet {
+        transform: translate(80px, -10px);
+      }
+      @include mobile {
+        transform: translate(20px, 0);
+      }
+
+      img {
+        @include tablet {
+          width: 676px;
+        }
+        @include mobile {
+          width: 458px;
+        }
+      }
+
+      figcaption {
+        width: 145px;
+        height: 45px;
+        background-image: url("../../../assets/images/display_notes_caption.png");
+        transform: translate(707px, -16px);
+
+        @include tablet {
+          transform: scale(0.8) translate(540px, -34px);
+        }
+        @include mobile {
+          transform: scale(0.8) translate(220px, -45px);
+        }
+      }
     }
   }
 }
@@ -27,18 +78,53 @@ section.display .notes {
 section.display .share-play {
   margin-top: 55px;
 
+  @include mobile {
+    margin-top: 30px;
+  }
+
   .figures {
     height: 630px;
 
-    figure {
-      transform: translate(-360px, 0);
+    @include tablet {
+      height: 330px;
+    }
+    @include mobile {
+      height: auto;
+      order: 1;
     }
 
-    figcaption {
-      width: 110px;
-      height: 48px;
-      background-image: url("../../../assets/images/display_shareplay_caption.png");
-      transform: translate(300px, 658px);
+    figure {
+      transform: translate(-360px, 0);
+
+      @include tablet {
+        transform: translate(-178px, 0);
+      }
+      @include mobile {
+        transform: translate(20px, 0);
+      }
+
+      img {
+        @include tablet {
+          width: 682px;
+        }
+        @include mobile {
+          width: 460px;
+        }
+      }
+
+      figcaption {
+        width: 110px;
+        height: 48px;
+        background-image: url("../../../assets/images/display_shareplay_caption.png");
+        transform: translate(300px, 658px);
+
+        @include tablet {
+          transform: scale(0.8) translate(261px, 540px);
+        }
+        @include mobile {
+          transform: scale(0.8) translate(261px, 358px);
+        }
+      }
     }
   }
 }
