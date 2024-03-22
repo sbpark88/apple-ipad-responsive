@@ -1,24 +1,70 @@
+@import "../../mixins";
+
 section.apps {
   margin-top: 368px;
+
+  @include tablet {
+    margin-top: 120px;
+  }
 
   h1 {
     width: 500px;
     height: 264px;
     background-image: url("../../../assets/images/apps_headline.png");
     transform: translate(17px, 0);
+
+    @include tablet {
+      width: 390px;
+      height: 208px;
+      transform: none;
+    }
+    @include mobile {
+      width: 320px;
+      height: 169px;
+      margin: 0 auto;
+    }
   }
 
   .infos {
     margin: 63px 0 0 82px;
+
+    @include tablet {
+      margin-left: 0;
+    }
+    @include mobile {
+    }
+
+    .info {
+      @include tablet {
+        max-width: 404px;
+      }
+      @include mobile {
+        max-width: none;
+      }
+    }
   }
 
   .figures {
     display: flex;
     height: 768px;
 
+    @include tablet {
+      height: 450px;
+    }
+    @include mobile {
+      height: auto;
+      display: block;
+    }
+
     > div {
       flex-grow: 1;
       position: relative;
+
+      @include mobile {
+        display: flex;
+        justify-content: center;
+        height: 240px;
+      }
     }
   }
 }
@@ -27,6 +73,22 @@ section.apps {
   .figure-masterclass {
     figure {
       transform: translate(578px, -431px);
+
+      @include tablet {
+        transform: translate(438px, -264px);
+      }
+      @include mobile {
+        transform: translate(140px, 40px);
+      }
+
+      img {
+        @include tablet {
+          width: 330px;
+        }
+        @include mobile {
+          width: 270px;
+        }
+      }
     }
 
     figcaption {
@@ -34,12 +96,35 @@ section.apps {
       height: 25px;
       background-image: url("../../../assets/images/apps_masterclass_caption.png");
       transform: translate(26px, 690px);
+
+      @include tablet {
+        transform: scale(0.8) translate(6px, 480px);
+      }
+      @include mobile {
+        transform: scale(0.8) translate(29px, 400px);
+      }
     }
   }
 
   .figure-adobe {
     figure {
       transform: translate(-515px, 85px);
+
+      @include tablet {
+        transform: translate(-230px, 20px);
+      }
+      @include mobile {
+        transform: translate(-154px, -126px);
+      }
+
+      img {
+        @include tablet {
+          width: 438px;
+        }
+        @include mobile {
+          width: 358px;
+        }
+      }
     }
 
     figcaption {
@@ -47,12 +132,35 @@ section.apps {
       height: 24px;
       background-image: url("../../../assets/images/apps_adobe_caption.png");
       transform: translate(544px, 514px);
+
+      @include tablet {
+        transform: scale(0.8) translate(324px, 355px);
+      }
+      @include mobile {
+        transform: scale(0.8) translate(233px, 295px);
+      }
     }
   }
 
   .figure-fantasian {
     figure {
       transform: translate(-103px, 318px);
+
+      @include tablet {
+        transform: translate(-40px, 160px);
+      }
+      @include mobile {
+        transform: translate(19px, -82px);
+      }
+
+      img {
+        @include tablet {
+          width: 438px;
+        }
+        @include mobile {
+          width: 358px;
+        }
+      }
     }
 
     figcaption {
@@ -60,6 +168,13 @@ section.apps {
       height: 22px;
       background-image: url("../../../assets/images/apps_fantasian_caption.png");
       transform: translate(24px, 483px);
+
+      @include tablet {
+        transform: scale(0.8) translate(14px, 339px);
+      }
+      @include mobile {
+        transform: scale(0.8) translate(24px, 282px);
+      }
     }
   }
 }
@@ -68,6 +183,22 @@ section.apps {
   .figure-books {
     figure {
       transform: translate(-133px, -150px);
+
+      @include tablet {
+        transform: translate(43px, -94px);
+      }
+      @include mobile {
+        transform: translate(-100px, -40px);
+      }
+
+      img {
+        @include tablet {
+          width: 330px;
+        }
+        @include mobile {
+          width: 270px;
+        }
+      }
     }
 
     figcaption {
@@ -75,12 +206,35 @@ section.apps {
       height: 27px;
       background-image: url("../../../assets/images/apps_books_caption.png");
       transform: translate(397px, 707px);
+
+      @include tablet {
+        transform: scale(0.8) translate(252px, 493px);
+      }
+      @include mobile {
+        transform: scale(0.8) translate(197px, 407px);
+      }
     }
   }
 
   .figure-goodnotes {
     figure {
       transform: translate(-93px, 68px);
+
+      @include tablet {
+        transform: translate(3px, 28px);
+      }
+      @include mobile {
+        transform: translate(132px, -110px);
+      }
+
+      img {
+        @include tablet {
+          width: 346px;
+        }
+        @include mobile {
+          width: 286px;
+        }
+      }
     }
 
     figcaption {
@@ -88,6 +242,13 @@ section.apps {
       height: 25px;
       background-image: url("../../../assets/images/apps_goodnotes_caption.png");
       transform: translate(24px, 690px);
+
+      @include tablet {
+        transform: scale(0.8) translate(5px, 483px);
+      }
+      @include mobile {
+        transform: scale(0.8) translate(24px, -37px);
+      }
     }
   }
 }
