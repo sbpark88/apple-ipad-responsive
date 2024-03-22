@@ -1,5 +1,11 @@
+@import "../../mixins";
+
 section.privacy {
   margin-top: 238px;
+
+  @include tablet {
+    margin-top: 120px;
+  }
 
   h1 {
     width: 482px;
@@ -9,6 +15,18 @@ section.privacy {
     position: relative;
     z-index: 1;
     transform: translateX(57px);
+
+    @include tablet {
+      width: 368px;
+      height: 182px;
+      transform: translateX(70px);
+    }
+    @include mobile {
+      width: 277px;
+      height: 136px;
+      transform: none;
+      margin: 0 auto;
+    }
   }
 
   .infos {
@@ -16,11 +34,32 @@ section.privacy {
     align-items: flex-end;
     position: relative;
     z-index: 1;
+
+    @include tablet {
+      margin-top: 24px;
+    }
   }
 
   .figures {
+    @include mobile {
+      margin-top: 30px;
+    }
+
     figure {
       transform: translate(-215px, -500px);
+
+      @include tablet {
+        transform: translate(-18px, -440px);
+      }
+      @include mobile {
+        transform: translate(20px, 0);
+      }
+
+      img {
+        @include tablet {
+          width: 441px;
+        }
+      }
     }
 
     figcaption {
@@ -29,6 +68,10 @@ section.privacy {
         height: 26px;
         background-image: url("../../../assets/images/privacy_caption_apple_id.png");
         transform: translate(195px, -13px);
+
+        @include tablet {
+          transform: scale(0.8) translate(-22px, -18px);
+        }
       }
 
       .caption-touch-id {
@@ -36,6 +79,10 @@ section.privacy {
         height: 31px;
         background-image: url("../../../assets/images/privacy_caption_touch_id.png");
         transform: translate(533px, 485px);
+
+        @include tablet {
+          transform: scale(0.8) translate(293px, 339px);
+        }
       }
     }
   }
