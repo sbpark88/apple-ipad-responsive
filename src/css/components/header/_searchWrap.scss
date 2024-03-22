@@ -1,92 +1,269 @@
 @import "../../constant";
+@import "../../mixins";
 
-header .inner .search-wrap {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+$icon-width: 40px;
 
-  .search {
-    max-width: 600px;
-    margin: 0 auto;
-    position: relative;
-  }
+header {
+  .inner .search-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
 
-  .search .shadow {
-    position: fixed;
-    inset: 0;
-    background-color: $color-shadow;
-  }
-
-  .search .text-filed {
-    position: relative;
-    $icon-width: 40px;
-
-    input {
-      width: 100%;
-      height: $header-height;
-      padding: 0 $icon-width;
-      border: none;
-      outline: none;
+    @include mobile {
+      padding: 0 20px 14px;
+      border-bottom: 1px solid $color-header;
       box-sizing: border-box;
-      background-color: transparent;
-      font-size: 17px;
-      color: $color-white;
+      top: $header-height;
     }
 
-    .icon {
-      width: $icon-width;
+    .search {
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+
+      @include mobile {
+        max-width: $mobile-header-max-width;
+      }
+    }
+
+    .search .shadow {
+      position: fixed;
+      inset: 0;
+      background-color: $color-shadow;
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    .search .text-filed {
+      position: relative;
+      width: 100%;
+      transition: 0.2s;
+
+      @include mobile {
+        border-radius: 10px;
+        background-color: #1d1d1d;
+      }
+
+      input {
+        width: 100%;
+        height: $header-height;
+        padding: 0 $icon-width;
+        border: none;
+        outline: none;
+        box-sizing: border-box;
+        background-color: transparent;
+        font-size: 17px;
+        color: $color-white;
+      }
+
+      .icon {
+        width: $icon-width;
+        height: $header-height;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        top: 0;
+        opacity: 0.4;
+      }
+
+      .search-icon {
+        background-image: url("../../../assets/images/header_search.svg");
+        left: 0;
+      }
+
+      .search-closer {
+        background-image: url("../../../assets/images/header_close.svg");
+        right: 0;
+        cursor: pointer;
+
+        @include mobile {
+          display: none;
+        }
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+    .search-cancel {
       height: $header-height;
-      background-repeat: no-repeat;
-      background-position: center;
+      display: flex;
+      align-items: center;
+      color: $color-link;
+      cursor: pointer;
       position: absolute;
       top: 0;
-      opacity: 0.4;
-    }
-
-    .search-icon {
-      background-image: url("../../../assets/images/header_search.svg");
-      left: 0;
-    }
-
-    .search-closer {
-      background-image: url("../../../assets/images/header_close.svg");
       right: 0;
-      cursor: pointer;
+      transition: 0.4s;
+      visibility: hidden;
+      opacity: 0;
+    }
 
-      &:hover {
+    .search .autocompletes {
+      width: 100%;
+      padding: 26px 40px 20px;
+      border-radius: 0 0 18px 18px;
+      box-sizing: border-box;
+      background-color: $color-white;
+      position: absolute;
+      top: $header-height;
+      left: 0;
+
+      @include mobile {
+        top: 58px;
+        padding: 26px 0 20px;
+        background-color: transparent;
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.3s;
+        transform: translateY(-100px);
+      }
+
+      h3 {
+        font-size: 12px;
+        color: $color-font-darkgray;
+        margin-bottom: 12px;
+      }
+
+      ul li {
+        @include mobile {
+          &:not(:last-child) {
+            border-bottom: 1px solid $color-header;
+          }
+        }
+
+        a {
+          display: block;
+          margin: 0 -14px;
+          padding: 10px 0 10px 30px;
+          font-size: 14px;
+
+          @include mobile {
+            padding: 16px 0 16px 16px;
+            color: $color-font-middlegray;
+          }
+        }
+
+        &:hover a {
+          background-color: $color-section;
+          color: $color-link;
+
+          @include mobile {
+            background-color: transparent;
+            color: $color-link;
+          }
+        }
+      }
+    }
+  }
+
+  @include mobile {
+    &.menuing {
+      .inner .search-wrap {
+        visibility: visible;
         opacity: 1;
       }
     }
-  }
+    &.menuing.searching--mobile {
+      transform: translateY(-30px);
 
-  .search .autocompletes {
-    width: 100%;
-    padding: 26px 40px 20px;
-    border-radius: 0 0 18px 18px;
-    box-sizing: border-box;
-    background-color: $color-white;
-    position: absolute;
-    top: $header-height;
-    left: 0;
+      .inner .search-wrap .search {
+        .text-filed {
+          width: calc(100% - 55px);
+        }
 
-    h3 {
-      font-size: 12px;
-      color: $color-font-darkgray;
-      margin-bottom: 12px;
-    }
+        .autocompletes {
+          visibility: visible;
+          opacity: 1;
+          transform: translateY(0);
+        }
 
-    ul li {
-      a {
-        display: block;
-        margin: 0 -14px;
-        padding: 10px 0 10px 30px;
-        font-size: 14px;
+        .search-cancel {
+          visibility: visible;
+          opacity: 1;
+        }
       }
 
-      &:hover a {
-        background-color: $color-section;
-        color: $color-link;
+      .inner .clone-menu {
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(100px);
+      }
+    }
+  }
+}
+
+/* header.searching 전환 효과 */
+header {
+  // 검색창이 사라질 때(=header 태그에 searching 클래스가 제거될 때) 적용될 스타일.
+  .search-wrap {
+    visibility: hidden;
+    opacity: 0;
+    transition: $search-bar-transition-time;
+
+    .search {
+      input,
+      .search-icon,
+      .autocompletes h3,
+      .autocompletes li {
+        transition: $search-bar-transition-time;
+        transform: translateX(100px);
+
+        @include mobile {
+          transform: translateX(0);
+        }
+      }
+
+      .autocompletes {
+        @for $i from 1 through $autocompletes-li-length {
+          li:nth-child(#{$i}) {
+            transition-delay: calc(
+              #{$autocompletes-li-length -
+                $i} *
+                ($search-bar-transition-time / #{$autocompletes-li-length})
+            );
+
+            @include mobile {
+              transition-delay: 0s;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // 검색창이 열릴 때(=header 태그에 searching 클래스가 추가될 때) 적용될 스타일.
+  &.searching .search-wrap {
+    visibility: visible;
+    opacity: 1;
+    /* 이미 시간초이기 때문에 calc 결과에 s 를 붙이지 않는다 */
+    transition-delay: calc(#{$search-bar-transition-time} / 2);
+
+    .search {
+      input,
+      .search-icon,
+      .autocompletes h3,
+      .autocompletes li {
+        transition-delay: calc(#{$search-bar-transition-time} / 2);
+        transform: translateX(0);
+      }
+
+      .autocompletes {
+        @for $i from 1 through $autocompletes-li-length {
+          li:nth-child(#{$i}) {
+            transition-delay: calc(
+              #{$i} *
+                ($search-bar-transition-time / #{$autocompletes-li-length})
+            );
+
+            @include mobile {
+              transition-delay: 0s;
+            }
+          }
+        }
       }
     }
   }

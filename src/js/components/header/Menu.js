@@ -3,14 +3,18 @@
 import { $, render } from "../../utils/render";
 import template from "./Menu.html";
 import { eventBind } from "../../utils/eventBinding";
-import { toggleClassName } from "../../utils/styleHelper";
+import {
+  allowScroll,
+  preventScroll,
+  toggleClassName,
+} from "../../utils/styleHelper";
 
 const container = $("header .menu");
 
 render(container)(template);
 
 const basketStarterEl = $("header .basket-starter");
-const basketEl = $("header .menu .basket");
+const basketEl = $("header .basket-starter .basket");
 
 const [showBasket, hideBasket] = toggleClassName({
   $el: basketEl,
@@ -30,3 +34,25 @@ const clickBasketEl = (event) => {
 eventBind({ $el: window, listener: hideBasket });
 eventBind({ $el: basketStarterEl, listener: clickBasketStarterEl });
 eventBind({ $el: basketEl, listener: clickBasketEl });
+
+/* Mobile page */
+const headerEl = $("header");
+const menuStarterEl = $("header .menu-starter");
+
+const [showMenu, hideMenu] = toggleClassName({
+  $el: headerEl,
+  className: "menuing",
+});
+
+const clickMenuStarterEl = (event) => {
+  event.stopPropagation();
+  if (headerEl.classList.contains("menuing")) {
+    hideMenu();
+    allowScroll();
+  } else {
+    showMenu();
+    preventScroll();
+  }
+};
+
+eventBind({ $el: menuStarterEl, listener: clickMenuStarterEl });

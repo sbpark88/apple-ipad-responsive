@@ -1,10 +1,18 @@
 @import "../../constant";
+@import "../../mixins";
 
 section.hero {
   background-color: $color-section;
 
   .inner {
     padding-bottom: 110px;
+
+    @include tablet {
+      padding-bottom: 80px;
+    }
+    @include mobile {
+      padding-top: 40px;
+    }
   }
 }
 
@@ -16,15 +24,48 @@ section.hero {
     position: absolute;
     transform: translate(624px, 235px);
     z-index: 1;
+
+    @include tablet {
+      width: 166px;
+      height: 68px;
+      transform: translate(448px, 165px);
+    }
+    @include mobile {
+      margin: 0 auto 40px;
+      position: static;
+      transform: none;
+    }
   }
 
   .figures {
     height: 808px; // figure image height
 
+    @include tablet {
+      height: 584px;
+      margin-bottom: 14px;
+    }
+    @include mobile {
+      height: auto;
+      margin-bottom: 100px;
+    }
+
     figure {
       transform: translate(74px, -64px);
 
+      @include tablet {
+        transform: translate(70px, -24px);
+      }
+      @include mobile {
+        transform: none;
+      }
+
       img {
+        @include tablet {
+          width: 540px;
+        }
+        @include mobile {
+          width: 337px;
+        }
       }
 
       figcaption {
@@ -33,18 +74,46 @@ section.hero {
           height: 84px;
           background-image: url("../../../assets/images/hero_ipad_caption_camera.png");
           transform: translate(43px, 580px);
+
+          @include tablet {
+            //transform: scale(0.8) translate(-9px, 524px);
+            transform: translate(-9px, 524px);
+          }
+          @include mobile {
+            width: 180px;
+            height: 37px;
+            background-image: url("../../../assets/images/hero_ipad_caption_camera_mobile.png");
+            //transform: scale(1) translate(21px, 368px);
+            transform: translate(21px, 368px);
+          }
         }
         .caption-chip {
           width: 95px;
           height: 43px;
           background-image: url("../../../assets/images/hero_ipad_caption_chip.png");
           transform: translate(589px, 510px);
+
+          @include tablet {
+            //transform: scale(0.8) translate(510px, 422px);
+            transform: translate(510px, 422px);
+          }
+          @include mobile {
+            //transform: scale(0.8) translate(248px, 42px);
+            transform: translate(248px, 42px);
+          }
         }
         .caption-storage {
           width: 80px;
           height: 43px;
           background-image: url("../../../assets/images/hero_ipad_caption_storage.png");
           transform: translate(627px, 631px);
+
+          @include tablet {
+            transform: scale(0.8) translate(556px, 556px);
+          }
+          @include mobile {
+            transform: scale(0.8) translate(288px, 168px);
+          }
         }
       }
     }
@@ -57,6 +126,16 @@ section.hero {
     height: 145px;
     margin: 0 auto;
     background-image: url("../../../assets/images/hero_headline.png");
+
+    @include tablet {
+      width: 515px;
+      height: 95px;
+    }
+    @include mobile {
+      width: 295px;
+      height: 185px;
+      background-image: url("../../../assets/images/hero_headline_mobile.png");
+    }
   }
 
   p.pricing {
@@ -64,6 +143,10 @@ section.hero {
     font-size: 24px;
     font-weight: 600;
     text-align: center;
+
+    @include mobile {
+      font-size: 20px;
+    }
   }
 
   p.description {
@@ -71,11 +154,14 @@ section.hero {
     margin: 18px auto 0;
     font-size: 19px;
     text-align: center;
+
+    @include mobile {
+      width: auto;
+      font-size: 17px;
+    }
   }
 
   .links {
     margin-top: 30px;
-    a {
-    }
   }
 }

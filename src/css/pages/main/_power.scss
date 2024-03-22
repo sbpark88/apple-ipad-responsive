@@ -1,7 +1,15 @@
 @import "../../constant";
+@import "../../mixins";
 
 section.power {
   margin-top: 110px;
+
+  @include tablet {
+    margin-top: 80px;
+  }
+
+  @include mobile {
+  }
 }
 
 section.power .multiple-apps {
@@ -10,16 +18,61 @@ section.power .multiple-apps {
     height: 280px;
     background-image: url("../../../assets/images/power_headline.png");
     transform: translate(104px, 0);
+
+    @include tablet {
+      width: 310px;
+      height: 180px;
+    }
+
+    @include mobile {
+      margin: 0 auto;
+      transform: none;
+    }
   }
 
   .figures {
     height: 773px; // figure image height
+
+    @include tablet {
+      height: 503px;
+    }
+
+    @include mobile {
+      height: 340px;
+      margin-top: 50px;
+    }
+
+    figure {
+      @include tablet {
+        transform: translate(71px, 0);
+      }
+      @include mobile {
+        transform: translate(20px, 0);
+      }
+
+      img {
+        @include tablet {
+          width: 682px;
+        }
+
+        @include mobile {
+          width: 462px;
+        }
+      }
+    }
 
     figcaption {
       width: 138px;
       height: 46px;
       background-image: url("../../../assets/images/power_multiple_apps_caption.png");
       transform: translate(703px, -47px);
+
+      @include tablet {
+        transform: scale(0.8) translate(532px, -58px);
+      }
+      @include mobile {
+        transform: scale(0.8) translate(112px, -45px);
+      }
     }
   }
 }
@@ -27,11 +80,45 @@ section.power .multiple-apps {
 section.power .arcade {
   margin-top: 55px;
 
+  @include tablet {
+    margin-top: 0;
+  }
+  @include mobile {
+    margin-top: 30px;
+  }
+
   .figures {
     height: 600px;
 
+    @include tablet {
+      height: 480px;
+    }
+
+    @include mobile {
+      height: auto;
+      margin-top: 20px;
+      order: 1;
+    }
+
     figure {
       transform: translate(-347px, -90px);
+
+      @include tablet {
+        transform: translate(-182px, -6px);
+      }
+
+      @include mobile {
+        transform: translate(20px, 0);
+      }
+
+      img {
+        @include tablet {
+          width: 676px;
+        }
+        @include mobile {
+          width: 458px;
+        }
+      }
     }
 
     figcaption {
@@ -39,6 +126,14 @@ section.power .arcade {
       height: 77px;
       background-image: url("../../../assets/images/power_arcade_caption.png");
       transform: translate(483px, 653px);
+
+      @include tablet {
+        transform: scale(0.8) translate(316px, 528px);
+      }
+
+      @include mobile {
+        transform: scale(0.8) translate(316px, 368px);
+      }
     }
   }
 }
@@ -49,8 +144,34 @@ section.power .create {
   .figures {
     height: 772px;
 
+    @include tablet {
+      height: 588px;
+    }
+
+    @include mobile {
+      height: auto;
+      margin-top: 20px;
+    }
+
     figure {
       transform: translate(-25px, 50px);
+
+      @include tablet {
+        transform: translate(4px, -36px);
+      }
+
+      @include mobile {
+        transform: translate(100px, 0);
+      }
+
+      img {
+        @include tablet {
+          width: 820px;
+        }
+        @include mobile {
+          width: 525px;
+        }
+      }
     }
 
     figcaption {
@@ -58,6 +179,14 @@ section.power .create {
       height: 46px;
       background-image: url("../../../assets/images/power_create_caption.png");
       transform: translate(543px, 908px);
+
+      @include tablet {
+        transform: scale(0.8) translate(420px, 747px);
+      }
+
+      @include mobile {
+        transform: scale(0.8) translate(254px, 486px);
+      }
     }
   }
 }

@@ -1,4 +1,5 @@
 @import "constant";
+@import "mixins";
 
 html.fixed {
   position: fixed;
@@ -20,6 +21,10 @@ body {
   margin: 0 auto;
   padding: 0 20px;
   position: relative;
+
+  @include tablet {
+    max-width: 692px;
+  }
 }
 
 img,
@@ -85,6 +90,12 @@ sup {
   display: flex;
   justify-content: center;
   gap: 40px;
+
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
 }
 
 a.link {
@@ -92,6 +103,10 @@ a.link {
   color: $color-link;
   font-size: 19px;
   line-height: 1.3;
+
+  @include mobile {
+    font-size: 17px;
+  }
 
   &:hover {
     text-decoration: underline;

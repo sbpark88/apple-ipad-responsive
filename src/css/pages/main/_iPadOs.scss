@@ -1,25 +1,64 @@
+@import "../../mixins";
+
 section.ipados {
   margin-top: 212px;
+
+  @include tablet {
+    margin-top: 100px;
+  }
+  @include mobile {
+  }
 
   h1 {
     width: 530px;
     height: 400px;
     margin: 0 auto;
     background-image: url("../../../assets/images/ipados_headline.png");
+
+    @include tablet {
+      width: 357px;
+      height: 275px;
+      margin: 0;
+    }
+    @include mobile {
+      width: 300px;
+      height: 227px;
+      margin: 0 auto;
+    }
   }
 
   .infos {
     margin-top: 44px;
     align-items: flex-end;
+
+    @include tablet {
+      margin-top: -98px;
+    }
+    @include mobile {
+      margin-top: 30px;
+    }
   }
 
   .figures {
     height: 782px;
     display: flex;
 
+    @include tablet {
+      height: 520px;
+    }
+    @include mobile {
+      height: auto;
+      display: block;
+    }
+
     > div {
       flex-grow: 1;
       position: relative;
+
+      @include mobile {
+        display: flex;
+        justify-content: center;
+      }
     }
   }
 }
@@ -28,6 +67,22 @@ section.ipados {
   .figure-split-view {
     figure {
       transform: translate(-205px, -312px);
+
+      @include tablet {
+        transform: translate(-17px, -187px);
+      }
+      @include mobile {
+        transform: translate(64px, 55px);
+      }
+
+      img {
+        @include tablet {
+          width: 441px;
+        }
+        @include mobile {
+          width: 370px;
+        }
+      }
     }
 
     figcaption {
@@ -35,12 +90,35 @@ section.ipados {
       height: 53px;
       background-image: url("../../../assets/images/ipados_split_view_caption.png");
       transform: translate(200px, -38px);
+
+      @include tablet {
+        transform: scale(0.8) translate(30px, -50px);
+      }
+      @include mobile {
+        transform: scale(0.8) translate(39px, -55px);
+      }
     }
   }
 
   .figure-widgets {
     figure {
       transform: translate(237px, 43px);
+
+      @include tablet {
+        transform: translate(180px, 3px);
+      }
+      @include mobile {
+        transform: translate(-19px, 34px);
+      }
+
+      img {
+        @include tablet {
+          width: 441px;
+        }
+        @include mobile {
+          width: 375px;
+        }
+      }
     }
 
     figcaption {
@@ -48,12 +126,35 @@ section.ipados {
       height: 46px;
       background-image: url("../../../assets/images/ipados_widgets_caption.png");
       transform: translate(257px, 497px);
+
+      @include tablet {
+        transform: scale(0.8) translate(152px, 345px);
+      }
+      @include mobile {
+        transform: scale(0.8) translate(252px, 287px);
+      }
     }
   }
 
   .figure-quick-note {
     figure {
       transform: translate(-625px, 232px);
+
+      @include tablet {
+        transform: translate(-346px, 119px);
+      }
+      @include mobile {
+        transform: translate(35px, 46px);
+      }
+
+      img {
+        @include tablet {
+          width: 333px;
+        }
+        @include mobile {
+          width: 283px;
+        }
+      }
     }
 
     figcaption {
@@ -61,6 +162,16 @@ section.ipados {
       height: 97px;
       background-image: url("../../../assets/images/ipados_quick_note_caption.png");
       transform: translate(511px, 470px);
+
+      @include tablet {
+        transform: scale(0.8) translate(350px, 310px);
+      }
+      @include mobile {
+        width: 76px;
+        height: 88px;
+        background-image: url("../../../assets/images/ipados_quick_note_caption_mobile.png");
+        transform: scale(1) translate(-65px, 250px);
+      }
     }
   }
 }

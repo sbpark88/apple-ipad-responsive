@@ -1,19 +1,57 @@
+@import "../../mixins";
+
 section.accessories {
   margin-top: 195px;
+
+  @include tablet {
+    margin-top: 120px;
+  }
 
   h1 {
     width: 550px;
     height: 343px;
     background-image: url("../../../assets/images/accessories_headline.png");
     margin: 0 auto;
+
+    @include tablet {
+      width: 384px;
+      height: 243px;
+    }
+    @include mobile {
+      width: 300px;
+      height: 190px;
+    }
   }
 
   .figures {
     height: 1021px;
     margin-top: 34px;
 
+    @include tablet {
+      height: 700px;
+    }
+    @include mobile {
+      height: auto;
+      margin-top: 64px;
+    }
+
     figure {
       transform: translate(-24px, 0);
+
+      @include tablet {
+        transform: translate(12px, 0);
+      }
+      @include mobile {
+      }
+
+      img {
+        @include tablet {
+          width: 712px;
+        }
+        @include mobile {
+          width: 380px;
+        }
+      }
     }
 
     figcaption {
@@ -22,12 +60,29 @@ section.accessories {
         height: 41px;
         background-image: url("../../../assets/images/accessories_caption_memo.png");
         transform: translate(790px, -52px);
+
+        @include tablet {
+          transform: scale(0.8) translate(677px, -60px);
+        }
+        @include mobile {
+          transform: scale(0.8) translate(186px, -58px);
+        }
       }
       .caption-supports {
         width: 200px;
         height: 70px;
         background-image: url("../../../assets/images/accessories_caption_supports.png");
         transform: translate(163px, 821px);
+
+        @include tablet {
+          transform: scale(0.8) translate(101px, 650px);
+        }
+        @include mobile {
+          width: 160px;
+          height: 44px;
+          background-image: url("../../../assets/images/accessories_caption_supports_mobile.png");
+          transform: scale(1) translate(31px, 335px);
+        }
       }
     }
   }
@@ -36,5 +91,9 @@ section.accessories {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+
+    @include mobile {
+      margin-top: 100px;
+    }
   }
 }
