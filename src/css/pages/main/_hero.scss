@@ -10,9 +10,8 @@ section.hero {
     @include tablet {
       padding-bottom: 80px;
     }
-
     @include mobile {
-      padding-top: 40px;
+      padding-bottom: 40px;
     }
   }
 }
@@ -26,6 +25,11 @@ section.hero {
     transform: translate(624px, 235px);
     z-index: 1;
 
+    @include tablet {
+      width: 166px;
+      height: 68px;
+      transform: translate(448px, 165px);
+    }
     @include mobile {
       margin: 0 auto 40px;
       position: static;
@@ -38,17 +42,30 @@ section.hero {
 
     @include tablet {
       height: 584px;
+      margin-bottom: 14px;
     }
-
     @include mobile {
-      height: 512px;
+      height: auto;
+      margin-bottom: 100px;
     }
 
     figure {
       transform: translate(74px, -64px);
 
+      @include tablet {
+        transform: translate(70px, -24px);
+      }
       @include mobile {
         transform: none;
+      }
+
+      img {
+        @include tablet {
+          width: 540px;
+        }
+        @include mobile {
+          width: 337px;
+        }
       }
 
       figcaption {
@@ -59,14 +76,13 @@ section.hero {
           transform: translate(43px, 580px);
 
           @include tablet {
-            transform: translate(-9px, 524px);
+            transform: scale(0.8) translate(-9px, 524px);
           }
-
           @include mobile {
             width: 180px;
             height: 37px;
             background-image: url("../../../assets/images/hero_ipad_caption_camera_mobile.png");
-            transform: scale($scale-0-point-8-recover) translate(36px, 376px);
+            transform: scale(1) translate(21px, 368px);
           }
         }
         .caption-chip {
@@ -76,11 +92,10 @@ section.hero {
           transform: translate(589px, 510px);
 
           @include tablet {
-            transform: translate(510px, 422px);
+            transform: scale(0.8) translate(510px, 422px);
           }
-
           @include mobile {
-            transform: translate(260px, 44px);
+            transform: scale(0.8) translate(248px, 42px);
           }
         }
         .caption-storage {
@@ -90,11 +105,10 @@ section.hero {
           transform: translate(627px, 631px);
 
           @include tablet {
-            transform: translate(556px, 556px);
+            transform: scale(0.8) translate(556px, 556px);
           }
-
           @include mobile {
-            transform: translate(300px, 170px);
+            transform: scale(0.8) translate(288px, 168px);
           }
         }
       }
@@ -113,12 +127,7 @@ section.hero {
       width: 515px;
       height: 95px;
     }
-
     @include mobile {
-      width: 295px;
-      height: 185px;
-      background-image: url("../../../assets/images/hero_headline_mobile.png");
-      transform: scale($scale-0-point-7-recover);
     }
   }
 
@@ -147,7 +156,5 @@ section.hero {
 
   .links {
     margin-top: 30px;
-    a {
-    }
   }
 }
