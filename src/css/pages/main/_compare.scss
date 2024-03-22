@@ -1,17 +1,40 @@
 @import "../../constant";
+@import "../../mixins";
 
 section.compare {
+  @include mobile {
+    .white-box {
+      max-width: 430px;
+    }
+  }
+
   .items {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-items: center;
     max-width: 940px;
     margin: 68px auto 74px;
+
+    @include tablet {
+      grid-template-columns: repeat(2, auto);
+      justify-content: space-between;
+      max-width: 500px;
+      margin-bottom: 34px;
+    }
+    @include mobile {
+      grid-template-columns: 100%;
+    }
   }
 
   .items .item {
+    flex-grow: 1;
     width: 190px;
     padding-bottom: 34px;
     border-bottom: 1px solid $color-border;
+
+    @include mobile {
+      border-bottom: none;
+    }
 
     .thumbnail {
       height: 214px;
@@ -58,6 +81,17 @@ section.compare {
 
     a.link {
       font-size: 14px;
+
+      @include mobile {
+        margin-top: 0;
+      }
+    }
+  }
+
+  @include mobile {
+    .links {
+      padding-top: 40px;
+      border-top: 1px solid $color-border;
     }
   }
 }

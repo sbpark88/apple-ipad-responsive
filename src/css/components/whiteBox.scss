@@ -1,4 +1,5 @@
 @import "../constant";
+@import "../mixins";
 
 .white-box-wrapper {
   background-color: $color-section;
@@ -14,23 +15,44 @@
   background-color: $color-white;
   text-align: center;
 
+  @include tablet {
+    padding: 60px 30px;
+  }
+
   &.white-box--transparent {
     background-color: transparent;
   }
 
   .icon {
     margin-bottom: 20px;
+
+    @include tablet {
+      width: 44px;
+    }
+    @include mobile {
+      margin: 0 auto 20px;
+    }
   }
 
   h1 {
     font-size: 50px;
     font-weight: 600;
     line-height: 1.3;
+
+    @include tablet {
+      font-size: 36px;
+    }
   }
 
   p {
     margin-top: 20px;
     font-size: 19px;
+
+    @include tablet {
+      font-size: 17px;
+    }
+    @include mobile {
+    }
   }
 
   a.link {

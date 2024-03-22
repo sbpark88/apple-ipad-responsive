@@ -1,0 +1,9 @@
+@import "../../mixins";
+
+section.trade {
+  p br {
+    @include tablet {
+      display: none;
+    }
+  }
+}
