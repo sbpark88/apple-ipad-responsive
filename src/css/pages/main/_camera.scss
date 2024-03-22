@@ -1,7 +1,15 @@
 @import "../../constant";
+@import "../../mixins";
 
 section.camera {
   margin-top: 303px;
+
+  @include tablet {
+    margin-top: 165px;
+  }
+  @include mobile {
+    margin-top: 120px;
+  }
 }
 
 section.camera .stage {
@@ -12,20 +20,66 @@ section.camera .stage {
     height: 450px;
     background-image: url("../../../assets/images/camera_headline.png");
     transform: translate(-25px, 0);
+
+    @include tablet {
+      width: 405px;
+      height: 270px;
+      transform: none;
+    }
+    @include mobile {
+      width: 304px;
+      height: 350px;
+      background-image: url("../../../assets/images/camera_headline_mobile.png");
+      margin: 0 auto;
+    }
   }
 
   .infos .info {
     position: absolute;
     top: 150px;
     right: 0;
+
+    @include tablet {
+      top: 0;
+    }
+    @include mobile {
+      position: static;
+      margin-top: 30px;
+    }
   }
 
   .figures {
     height: 770px;
     margin-top: 24px;
 
+    @include tablet {
+      height: 500px;
+    }
+    @include mobile {
+      height: auto;
+      margin-top: 64px;
+    }
+
     figure {
       transform: translate(90px, 0);
+
+      @include tablet {
+      }
+      @include mobile {
+        transform: translate(20px, 0);
+      }
+
+      img {
+        $width: 1044px;
+        width: $width;
+
+        @include tablet {
+          width: $width * 0.65;
+        }
+        @include mobile {
+          width: $width * 0.43;
+        }
+      }
     }
 
     video {
@@ -34,6 +88,18 @@ section.camera .stage {
       left: 76px;
       -webkit-mask-image: url("../../../assets/images/camera_video_mask.png");
       mask-image: url("../../../assets/images/camera_video_mask.png");
+
+      @include tablet {
+        top: 23px;
+        left: 50px;
+        transform: scale(0.65);
+        transform-origin: 0 0;
+      }
+      @include mobile {
+        top: 15px;
+        left: 33px;
+        transform: scale(0.43);
+      }
     }
 
     .controller--play,
@@ -44,6 +110,13 @@ section.camera .stage {
       align-items: center;
       gap: 8px;
       transform: translate(428px, -134px) rotate(-3deg);
+
+      @include tablet {
+        transform: translate(276px, -88px) rotate(-3deg);
+      }
+      @include mobile {
+        transform: translate(169px, -51px) rotate(-3deg);
+      }
 
       &:hover {
         text-decoration: underline;
@@ -64,6 +137,16 @@ section.camera .stage {
       height: 110px;
       background-image: url("../../../assets/images/camera_hardware_caption.png");
       transform: translate(-116px, 383px);
+
+      @include tablet {
+        transform: scale(0.8) translate(-136px, 306px);
+      }
+      @include mobile {
+        width: 175px;
+        height: 43px;
+        background-image: url("../../../assets/images/camera_hardware_caption_mobile.png");
+        transform: scale(1) translate(110px, -40px);
+      }
     }
   }
 }
@@ -72,8 +155,28 @@ section.camera .edit {
   .figures {
     height: 910px;
 
+    @include tablet {
+      height: auto;
+    }
+    @include mobile {
+      margin-top: 30px;
+    }
+
     figure {
       transform: translate(20px, 0);
+
+      @include tablet {
+        transform: translate(40px, 0);
+      }
+
+      img {
+        @include tablet {
+          width: 509px;
+        }
+        @include mobile {
+          width: 343px;
+        }
+      }
     }
 
     figcaption {
@@ -81,6 +184,13 @@ section.camera .edit {
       height: 47px;
       background-image: url("../../../assets/images/camera_edit_caption.png");
       transform: translate(27px, 905px);
+
+      @include tablet {
+        transform: scale(0.8) translate(27px, 742px);
+      }
+      @include mobile {
+        transform: scale(0.8) translate(27px, 502px);
+      }
     }
   }
 }

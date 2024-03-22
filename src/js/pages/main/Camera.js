@@ -25,10 +25,11 @@ const template = `
 const container = $("main section.camera");
 
 render(container)(template);
+
 render($("div.stage"))(
   Title("촬영에서 편집 공유까지 한 기기에서.") +
-    VideoFigures({ ...stageVideoFigures }) +
-    Infos(stageInfos),
+    Infos(stageInfos) +
+    VideoFigures({ ...stageVideoFigures }),
 );
 render($("div.edit"))(Infos(editInfos, "center") + Figures({ ...editFigures }));
 activateVideoControlButtons("div.stage");
