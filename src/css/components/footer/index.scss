@@ -1,4 +1,5 @@
 @import "../../constant";
+@import "../../mixins";
 
 @import "buyInfo";
 @import "warning";
@@ -9,4 +10,10 @@
 
 footer {
   background-color: $color-section;
+
+  @include tablet {
+    .inner {
+      max-width: none;
+    }
+  }
 }

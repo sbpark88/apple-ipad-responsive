@@ -4,7 +4,7 @@ import "../../../css/components/nav/index.scss";
 
 import { $, init } from "../../utils/render";
 import template from "./index.html";
-import { preventScroll, toggleClassName } from "../../utils/styleHelper";
+import { toggleClassName } from "../../utils/styleHelper";
 import { eventBind } from "../../utils/eventBinding";
 
 init(template, "nav")(() => {});

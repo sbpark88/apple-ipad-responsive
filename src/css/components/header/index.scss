@@ -13,10 +13,8 @@ header {
 
   .inner {
     max-width: 1020px;
-  }
 
-  @include tablet {
-    .inner {
+    @include tablet {
       padding: 0 10px;
     }
   }
