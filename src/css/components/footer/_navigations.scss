@@ -1,4 +1,5 @@
 @import "../../constant";
+@import "../../mixins";
 
 footer .inner .navigations {
   margin-bottom: 40px;
@@ -8,24 +9,102 @@ footer .inner .navigations {
   flex-wrap: wrap;
   align-content: space-between;
 
+  @include mobile {
+    height: auto;
+    display: block;
+  }
+
   .map {
     margin-top: 24px;
 
+    @include mobile {
+      margin-top: 0;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $color-border;
+      }
+    }
+
     &:nth-child(6) {
       padding-bottom: 100px;
+
+      @include mobile {
+        padding-bottom: 0;
+      }
     }
 
     h3 {
       font-size: 12px;
       font-weight: 600;
+
+      &:hover {
+        font-weight: 600;
+      }
+
+      @include mobile {
+        font-weight: 400;
+        padding: 12px 0;
+      }
+    }
+
+    &.active {
+      h3 {
+        font-weight: 600;
+      }
+    }
+  }
+
+  .map {
+    @include mobile {
+      position: relative;
+
+      ul {
+        height: 0;
+        overflow: hidden;
+        transition:
+          transform 0.6s,
+          opacity 0.4s;
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+
+      &.active ul {
+        height: auto;
+        overflow: visible;
+        padding: 6px 0 18px;
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      &::after {
+        content: "+";
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: $color-font-darkgray;
+        transition: 0.4s;
+      }
+
+      &.active::after {
+        transform: rotate(45deg);
+      }
     }
 
     li {
       margin-top: 12px;
       font-size: 12px;
 
+      @include mobile {
+        margin-top: 0;
+      }
+
       a {
         color: $color-font-darkgray;
+
+        @include mobile {
+          display: block;
+          padding: 6px 12px;
+        }
 
         &:hover {
           text-decoration: underline;

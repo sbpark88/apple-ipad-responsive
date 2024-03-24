@@ -1,0 +1,9 @@
+@import "../../mixins";
+
+section.environment {
+  p br {
+    @include tablet {
+      display: none;
+    }
+  }
+}

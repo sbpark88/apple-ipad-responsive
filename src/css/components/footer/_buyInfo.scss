@@ -1,9 +1,15 @@
+@import "../../mixins";
+
 footer .inner .buy-info {
   padding: 76px 0;
   display: flex;
   justify-content: space-around;
   gap: 20px;
   text-align: center;
+
+  @include tablet {
+    flex-wrap: wrap;
+  }
 
   .icon {
     width: 56px;

@@ -1,0 +1,14 @@
+@import "../../mixins";
+
+section.trade {
+  @include tablet {
+    p br {
+      display: none;
+    }
+  }
+  @include mobile {
+    h1 br {
+      display: none;
+    }
+  }
+}

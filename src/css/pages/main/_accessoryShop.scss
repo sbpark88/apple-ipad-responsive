@@ -1,3 +1,5 @@
+@import "../../mixins";
+
 section.accessory-shop {
   padding: 0;
 
@@ -13,5 +15,9 @@ section.accessory-shop {
 
   img {
     margin-top: 50px;
+
+    @include tablet {
+      width: 960px;
+    }
   }
 }

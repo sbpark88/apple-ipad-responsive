@@ -2,7 +2,7 @@
 
 /**
  * Event binding function
- * @param $el {Window | Element}
+ * @param $el {Window | Element  }
  * @param eventType {String}
  * @param listener {Function}
  * @returns {*}
