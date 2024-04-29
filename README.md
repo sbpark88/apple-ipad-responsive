@@ -37,7 +37,7 @@
     -->
     <br />
     <br />
-    <a href="javascript:void(0)">View Demo</a>
+    <a href="https://ipad-gamma-rouge.vercel.app">View Demo</a>
     ·
     <a href="https://github.com/sbpark88/apple-ipad-responsive/projects">Project</a>
     ·
