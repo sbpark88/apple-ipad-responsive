@@ -152,12 +152,12 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 ## Roadmap
 
 - [X] 데스크탑 페이지
-- [ ] 태블릿 페이지
-- [ ] 모바일 페이지
-- [ ] 배포
+- [X] 태블릿 페이지
+- [X] 모바일 페이지
+- [X] 배포
     - [X] Webpack Configuration
     - [X] Deploy on Vercel
-    - [ ] Finish README update
+    - [X] Finish README update
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
